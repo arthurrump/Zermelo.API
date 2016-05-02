@@ -8,8 +8,8 @@
     <ProjectGuid>{198B3493-85E9-419A-8F8A-81B019A19994}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Zermelo.Library.Tests</RootNamespace>
-    <AssemblyName>Zermelo.Library.Tests</AssemblyName>
+    <RootNamespace>Zermelo.API.Tests</RootNamespace>
+    <AssemblyName>Zermelo.API.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -65,9 +65,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Zermelo.Library\Zermelo.Library.csproj">
+    <ProjectReference Include="..\Zermelo.API\Zermelo.API.csproj">
       <Project>{06a3b817-06da-499a-bd8e-e4c4da8e3ea7}</Project>
-      <Name>Zermelo.Library</Name>
+      <Name>Zermelo.API</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

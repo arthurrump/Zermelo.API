@@ -99,9 +99,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Zermelo.Library\Zermelo.Library.csproj">
+    <ProjectReference Include="..\Zermelo.API\Zermelo.API.csproj">
       <Project>{06a3b817-06da-499a-bd8e-e4c4da8e3ea7}</Project>
-      <Name>Zermelo.Library</Name>
+      <Name>Zermelo.API</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

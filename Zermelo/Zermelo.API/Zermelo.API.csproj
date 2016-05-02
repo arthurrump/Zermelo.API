@@ -8,8 +8,8 @@
     <ProjectGuid>{06A3B817-06DA-499A-BD8E-E4C4DA8E3EA7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Zermelo.Library</RootNamespace>
-    <AssemblyName>Zermelo.Library</AssemblyName>
+    <RootNamespace>Zermelo.API</RootNamespace>
+    <AssemblyName>Zermelo.API</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

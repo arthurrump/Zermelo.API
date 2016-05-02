@@ -7,13 +7,13 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Zermelo.App.Shared", "Zerme
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zermelo.App.WP", "Zermelo.App.WP\Zermelo.App.WP.csproj", "{99658B1F-D86C-41CF-9D96-0D3C4FB64C44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zermelo.Library", "Zermelo.Library\Zermelo.Library.csproj", "{06A3B817-06DA-499A-BD8E-E4C4DA8E3EA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zermelo.API", "Zermelo.API\Zermelo.API.csproj", "{06A3B817-06DA-499A-BD8E-E4C4DA8E3EA7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{FAD881C3-944F-4724-BC36-6CEB3E9E0E0D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E117FD22-4C67-42B4-9829-46EF77EE2691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zermelo.Library.Tests", "Zermelo.Library.Tests\Zermelo.Library.Tests.csproj", "{198B3493-85E9-419A-8F8A-81B019A19994}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zermelo.API.Tests", "Zermelo.API.Tests\Zermelo.API.Tests.csproj", "{198B3493-85E9-419A-8F8A-81B019A19994}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zermelo.App.WP.Tests", "Zermelo.App.WP.Tests\Zermelo.App.WP.Tests.csproj", "{C1B41217-AF22-4B4C-B0B3-CA45A254F355}"
 EndProject
