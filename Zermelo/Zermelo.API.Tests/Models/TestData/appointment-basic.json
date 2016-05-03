@@ -1,0 +1,24 @@
+﻿{
+  "id": 51562,
+  "appointmentInstance": 21412,
+  "start": 423642360,
+  "end": 436234523,
+  "subjects": [
+    "ne"
+  ],
+  "groups": [
+    "gro"
+  ],
+  "locations": [
+    "loc"
+  ],
+  "type": "lesson",
+  "valid": true,
+  "hidden": false,
+  "cancelled": false,
+  "modified": false,
+  "moved": false,
+  "new": false,
+  "created": 413642360,
+  "lastModified": 413642360
+}

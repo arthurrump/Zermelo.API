@@ -1,0 +1,34 @@
+﻿{
+  "id": 51562,
+  "appointmentInstance": 21412,
+  "start": 423642360,
+  "end": 436234523,
+  "startTimeSlot": 1,
+  "endTimeSlot": 1,
+  "subjects": [
+    "ne"
+  ],
+  "teachers": [
+    "tea"
+  ],
+  "groups": [
+    "gro"
+  ],
+  "locations": [
+    "loc"
+  ],
+  "type": "lesson",
+  "remark": "Remark",
+  "valid": true,
+  "hidden": false,
+  "base": true,
+  "cancelled": false,
+  "modified": true,
+  "moved": false,
+  "new": false,
+  "changeDescription": "Description",
+  "created": 413642360,
+  "lastModified": 413642360,
+  "branchOfSchool": 2,
+  "branch": "Branch"
+}
