@@ -24,7 +24,9 @@ namespace Zermelo.API.Tests.Services
 
             ObservableCollection<TestClass> result = sut.DeserializeCollection<TestClass>(testData);
 
-            Assert.Equal(expected, result, new ObservableCollectionTestClassEqualityComparer());
+            Assert.Equal(expected.Count, result.Count);
+            for (int i = 0; i < expected.Count; i++)
+                Assert.Equal(expected[i].Number, result[i].Number);
         }
     }
 
@@ -36,25 +38,5 @@ namespace Zermelo.API.Tests.Services
         }
 
         public int Number { get; set; }
-    }
-
-    internal class ObservableCollectionTestClassEqualityComparer : IEqualityComparer<ObservableCollection<TestClass>>
-    {
-        public bool Equals(ObservableCollection<TestClass> x, ObservableCollection<TestClass> y)
-        {
-            if (x.Count != y.Count)
-                return false;
-
-            for (int i = 0; i < x.Count; i++)
-                if (x[i].Number != y[i].Number)
-                    return false;
-
-            return true;
-        }
-
-        public int GetHashCode(ObservableCollection<TestClass> obj)
-        {
-            return obj.GetHashCode();
-        }
     }
 }
