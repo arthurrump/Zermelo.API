@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Zermelo.API.Services.Interfaces
 {
-    public interface IJsonService
+    internal interface IJsonService
     {
         ObservableCollection<T> DeserializeCollection<T>(string json);
     }

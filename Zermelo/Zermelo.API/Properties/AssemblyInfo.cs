@@ -28,3 +28,6 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+// Make internal classes and functions available for testing
+[assembly: InternalsVisibleTo("Zermelo.API.Tests")]

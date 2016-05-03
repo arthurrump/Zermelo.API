@@ -28,7 +28,7 @@ namespace Zermelo.API.Tests.Services
         }
     }
 
-    class TestClass
+    internal class TestClass
     {
         public TestClass(int number)
         {
@@ -38,7 +38,7 @@ namespace Zermelo.API.Tests.Services
         public int Number { get; set; }
     }
 
-    class ObservableCollectionTestClassEqualityComparer : IEqualityComparer<ObservableCollection<TestClass>>
+    internal class ObservableCollectionTestClassEqualityComparer : IEqualityComparer<ObservableCollection<TestClass>>
     {
         public bool Equals(ObservableCollection<TestClass> x, ObservableCollection<TestClass> y)
         {

@@ -9,7 +9,7 @@ using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API.Services
 {
-    public class HttpService : IHttpService
+    internal class HttpService : IHttpService
     {
         public async Task<IHttpResponse> GetStringAsync(string requestUri)
         {
@@ -28,7 +28,7 @@ namespace Zermelo.API.Services
         }
     }
 
-    public class HttpResponse : IHttpResponse
+    internal class HttpResponse : IHttpResponse
     {
         public HttpResponse(string response, HttpStatusCode status)
         {

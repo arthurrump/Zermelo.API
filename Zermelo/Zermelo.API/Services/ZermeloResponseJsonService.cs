@@ -10,7 +10,7 @@ using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API.Services
 {
-    public class ZermeloResponseJsonService : IJsonService
+    internal class ZermeloResponseJsonService : IJsonService
     {
         public ObservableCollection<T> DeserializeCollection<T>(string json)
         {

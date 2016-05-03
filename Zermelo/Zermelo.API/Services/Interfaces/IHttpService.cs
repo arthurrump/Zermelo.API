@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Zermelo.API.Services.Interfaces
 {
-    public interface IHttpService
+    internal interface IHttpService
     {
         Task<IHttpResponse> GetStringAsync(string requestUri);
         Task<IHttpResponse> PostAsync(string requestUri, string content);
     }
 
-    public interface IHttpResponse
+    internal interface IHttpResponse
     {
         string Response { get; }
         int StatusCode { get; }
