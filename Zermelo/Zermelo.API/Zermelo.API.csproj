@@ -36,6 +36,8 @@
   <ItemGroup>
     <Compile Include="Helpers\UnixTimeHelpers.cs" />
     <Compile Include="Helpers\UnixTimeToDateTimeOffsetJsonConverter.cs" />
+    <Compile Include="Models\Announcement.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HttpService.cs" />
     <Compile Include="Services\Interfaces\IHttpService.cs" />
