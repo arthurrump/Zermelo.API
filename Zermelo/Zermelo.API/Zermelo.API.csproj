@@ -44,6 +44,8 @@
     <Compile Include="Services\HttpService.cs" />
     <Compile Include="Services\Interfaces\IHttpService.cs" />
     <Compile Include="Services\Interfaces\IJsonService.cs" />
+    <Compile Include="Services\Interfaces\IUrlBuilder.cs" />
+    <Compile Include="Services\UrlBuilder.cs" />
     <Compile Include="Services\ZermeloResponseJsonService.cs" />
   </ItemGroup>
   <ItemGroup>

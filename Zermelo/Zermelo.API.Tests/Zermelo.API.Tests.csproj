@@ -68,6 +68,7 @@
     <Compile Include="Models\AppointmentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HttpServiceTests.cs" />
+    <Compile Include="Services\UrlBuilderTests.cs" />
     <Compile Include="Services\ZermeloResponseJsonServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
