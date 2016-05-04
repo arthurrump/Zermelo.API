@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Helpers\StringExtensions.cs" />
     <Compile Include="Helpers\UnixTimeHelpers.cs" />
     <Compile Include="Helpers\UnixTimeToDateTimeOffsetJsonConverter.cs" />
     <Compile Include="Interfaces\IAuthentication.cs" />
