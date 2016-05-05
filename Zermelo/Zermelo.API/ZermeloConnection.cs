@@ -56,10 +56,10 @@ namespace Zermelo.API
             Authentication = auth as Authentication;
         }
 
-        private async void InitializeAuth(string host, string code)
+        private void InitializeAuth(string host, string code)
         {
             AuthenticationFactory authFactory = new AuthenticationFactory(_urlBuilder, _httpService, _jsonService);
-            Authentication = (await authFactory.WithCode(host, code)) as Authentication;
+            Authentication = authFactory.WithCode(host, code) as Authentication;
         }
 
         private void InitializeEndpoints()

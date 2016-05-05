@@ -23,7 +23,7 @@ namespace Zermelo.API.Factories
             _jsonService = jsonService;
         }
 
-        public async Task<IAuthentication> WithCode(string host, string code)
+        public IAuthentication WithCode(string host, string code)
         {
             const string _endpoint = "oauth/token";
 
@@ -38,7 +38,7 @@ namespace Zermelo.API.Factories
 
             string url = _urlBuilder.GetUrl(host, _endpoint, urlOptions);
 
-            IHttpResponse httpResponse = await _httpService.PostAsync(url, "");
+            IHttpResponse httpResponse = _httpService.PostAsync(url, "").Result;
 
             if (httpResponse.StatusCode != 200)
                 throw new ZermeloHttpException(httpResponse);
