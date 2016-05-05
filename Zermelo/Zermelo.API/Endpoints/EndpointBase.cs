@@ -29,7 +29,14 @@ namespace Zermelo.API.Endpoints
             Dictionary<string, string> urlOptions, List<string> fields = null)
         {
             if (fields != null && fields.Any())
-                urlOptions.Add("fields", fields.ToCommaSeperatedString());
+            {
+                if (urlOptions == null)
+                {
+                    urlOptions = new Dictionary<string, string>();
+                }
+
+                urlOptions.Add("fields", fields.ToCommaSeperatedString()); 
+            }
 
             string url = _urlBuilder.GetAuthenticatedUrl(_auth, endpoint, urlOptions);
 
