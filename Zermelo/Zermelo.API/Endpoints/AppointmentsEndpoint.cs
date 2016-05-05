@@ -46,19 +46,7 @@ namespace Zermelo.API.Endpoints
                 { "end", UnixTimeHelpers.ToUnixTimeSeconds(end.ToUniversalTime()).ToString() }
             };
 
-            if (fields != null && fields.Any())
-                urlOptions.Add("fields", fields.ToCommaSeperatedString());
-
-            string url = _urlBuilder.GetAuthenticatedUrl(_auth, _endpoint, urlOptions);
-
-            IHttpResponse httpResponse = await _httpService.GetAsync(url);
-
-            if (httpResponse.StatusCode != 200)
-                throw new ZermeloHttpException(httpResponse);
-
-            string json = httpResponse.Response;
-
-            return _jsonService.DeserializeCollection<Appointment>(json);
+            return await GetByCustomUrlOptionsAsync(urlOptions, fields);
         }
 
         /// <summary>
@@ -77,19 +65,7 @@ namespace Zermelo.API.Endpoints
                 { "id", id.ToString() }
             };
 
-            if (fields != null && fields.Any())
-                urlOptions.Add("fields", fields.ToCommaSeperatedString());
-
-            string url = _urlBuilder.GetAuthenticatedUrl(_auth, _endpoint, urlOptions);
-
-            IHttpResponse httpResponse = await _httpService.GetAsync(url);
-
-            if (httpResponse.StatusCode != 200)
-                throw new ZermeloHttpException(httpResponse);
-
-            string json = httpResponse.Response;
-
-            IEnumerable<Appointment> result = _jsonService.DeserializeCollection<Appointment>(json);
+            IEnumerable<Appointment> result = await GetByCustomUrlOptionsAsync(urlOptions, fields);
 
             if (result.Count() < 1)
                 return null;
@@ -113,19 +89,7 @@ namespace Zermelo.API.Endpoints
                 { "appointmentInstance", instanceId.ToString() }
             };
 
-            if (fields != null && fields.Any())
-                urlOptions.Add("fields", fields.ToCommaSeperatedString());
-
-            string url = _urlBuilder.GetAuthenticatedUrl(_auth, _endpoint, urlOptions);
-
-            IHttpResponse httpResponse = await _httpService.GetAsync(url);
-
-            if (httpResponse.StatusCode != 200)
-                throw new ZermeloHttpException(httpResponse);
-
-            string json = httpResponse.Response;
-
-            return _jsonService.DeserializeCollection<Appointment>(json);
+            return await GetByCustomUrlOptionsAsync(urlOptions, fields);
         }
 
         /// <summary>
@@ -139,19 +103,7 @@ namespace Zermelo.API.Endpoints
         /// <returns>The requested appointments.</returns>
         public async Task<IEnumerable<Appointment>> GetByCustomUrlOptionsAsync(Dictionary<string, string> urlOptions, List<string> fields = null)
         {
-            if (fields != null && fields.Any())
-                urlOptions.Add("fields", fields.ToCommaSeperatedString());
-
-            string url = _urlBuilder.GetAuthenticatedUrl(_auth, _endpoint, urlOptions);
-
-            IHttpResponse httpResponse = await _httpService.GetAsync(url);
-
-            if (httpResponse.StatusCode != 200)
-                throw new ZermeloHttpException(httpResponse);
-
-            string json = httpResponse.Response;
-
-            return _jsonService.DeserializeCollection<Appointment>(json);
+            return await GetByCustomUrlOptionsAsync<Appointment>(_endpoint, urlOptions, fields);
         }
     }
 }
