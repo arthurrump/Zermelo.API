@@ -10,7 +10,7 @@ using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API.Services
 {
-    internal class ZermeloResponseJsonService : IJsonService
+    internal class JsonService : IJsonService
     {
         public ObservableCollection<T> DeserializeCollection<T>(string json)
         {
@@ -24,6 +24,11 @@ namespace Zermelo.API.Services
             }
 
             return collection;
+        }
+
+        public T GetValue<T>(string json, string key)
+        {
+            return JObject.Parse(json).Value<T>(key);
         }
     }
 }

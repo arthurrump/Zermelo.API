@@ -9,12 +9,12 @@ using Zermelo.API.Services;
 
 namespace Zermelo.API.Tests.Services
 {
-    public class ZermeloResponseJsonServiceTests
+    public class JsonServiceTests
     {
         [Fact]
         public void ShouldDeserializeDataInResponeData()
         {
-            var sut = new ZermeloResponseJsonService();
+            var sut = new JsonService();
             ObservableCollection<TestClass> expected = new ObservableCollection<TestClass>
             {
                 new TestClass(5),
