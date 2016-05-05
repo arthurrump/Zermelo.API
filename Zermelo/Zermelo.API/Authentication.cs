@@ -11,7 +11,7 @@ namespace Zermelo.API
 {
     public class Authentication : IAuthentication
     {
-        internal Authentication(string host, string token)
+        public Authentication(string host, string token)
         {
             this.Host = host;
             this.Token = token;

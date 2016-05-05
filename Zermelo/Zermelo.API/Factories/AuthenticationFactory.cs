@@ -9,7 +9,7 @@ using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API.Factories
 {
-    class AuthenticationFactory
+    internal class AuthenticationFactory
     {
         private IUrlBuilder _urlBuilder;
         private IHttpService _httpService;
@@ -45,11 +45,6 @@ namespace Zermelo.API.Factories
             string json = httpResponse.Response;
             string token = _jsonService.GetValue<string>(json, "access_token");
 
-            return new Authentication(host, token);
-        }
-
-        public IAuthentication WithToken(string host, string token)
-        {
             return new Authentication(host, token);
         }
     }
