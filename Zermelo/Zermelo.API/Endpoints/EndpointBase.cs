@@ -22,5 +22,10 @@ namespace Zermelo.API.Endpoints
             _httpService = httpService;
             _jsonService = jsonService;
         }
+
+        /// <summary>
+        /// The list of fields to return. Set to <c>null</c> or an empty list for defaults.
+        /// </summary>
+        public List<string> Fields { get; set; } = null;
     }
 }
