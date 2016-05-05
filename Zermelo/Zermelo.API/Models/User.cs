@@ -46,6 +46,14 @@ namespace Zermelo.API.Models
         /// The full name of the user.
         /// </summary>
         public string FullName
-            => $"{FirstName} {Prefix} {LastName}";
+        {
+            get
+            {
+                if (String.IsNullOrWhiteSpace(Prefix))
+                    return $"{FirstName} {LastName}";
+                else
+                    return $"{FirstName} {Prefix} {LastName}";
+            }
+        }
     }
 }
