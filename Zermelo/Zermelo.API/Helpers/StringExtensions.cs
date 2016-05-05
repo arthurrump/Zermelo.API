@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zermelo.API.Helpers
 {
-    static class StringExtensions
+    internal static class StringExtensions
     {
         public static string RemoveAll(this string s, char character)
         {
