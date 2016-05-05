@@ -9,7 +9,7 @@ namespace Zermelo.API.Services.Interfaces
 {
     internal interface IJsonService
     {
-        ObservableCollection<T> DeserializeCollection<T>(string json);
+        IEnumerable<T> DeserializeCollection<T>(string json);
         T GetValue<T>(string json, string key);
     }
 }

@@ -12,12 +12,12 @@ namespace Zermelo.API.Services
 {
     internal class JsonService : IJsonService
     {
-        public ObservableCollection<T> DeserializeCollection<T>(string json)
+        public IEnumerable<T> DeserializeCollection<T>(string json)
         {
             JObject jsonResult = JObject.Parse(json);
             IEnumerable<JToken> jsonResults = jsonResult["response"]["data"].Children();
 
-            ObservableCollection<T> collection = new ObservableCollection<T>();
+            List<T> collection = new List<T>();
             foreach (JToken t in jsonResults)
             {
                 collection.Add(JsonConvert.DeserializeObject<T>(t.ToString()));
