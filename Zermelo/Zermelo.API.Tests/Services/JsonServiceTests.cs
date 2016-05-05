@@ -28,6 +28,18 @@ namespace Zermelo.API.Tests.Services
             for (int i = 0; i < expected.Count; i++)
                 Assert.Equal(expected[i].Number, result[i].Number);
         }
+
+        [Fact]
+        public void ShouldReturnValue()
+        {
+            var sut = new JsonService();
+            string expected = "value";
+            string testData = "{ \"key\": \"value\" }";
+
+            string result = sut.GetValue<string>(testData, "key");
+
+            Assert.Equal(expected, result);
+        }
     }
 
     internal class TestClass
