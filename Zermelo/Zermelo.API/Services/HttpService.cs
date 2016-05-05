@@ -11,7 +11,7 @@ namespace Zermelo.API.Services
 {
     internal class HttpService : IHttpService
     {
-        public async Task<IHttpResponse> GetStringAsync(string requestUri)
+        public async Task<IHttpResponse> GetAsync(string requestUri)
         {
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(requestUri);

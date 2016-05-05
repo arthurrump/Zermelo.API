@@ -8,7 +8,7 @@ namespace Zermelo.API.Services.Interfaces
 {
     internal interface IHttpService
     {
-        Task<IHttpResponse> GetStringAsync(string requestUri);
+        Task<IHttpResponse> GetAsync(string requestUri);
         Task<IHttpResponse> PostAsync(string requestUri, string content);
     }
 
