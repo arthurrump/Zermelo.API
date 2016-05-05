@@ -15,14 +15,14 @@ namespace Zermelo.API.Tests.Services
         public void ShouldDeserializeDataInResponeData()
         {
             var sut = new JsonService();
-            ObservableCollection<TestClass> expected = new ObservableCollection<TestClass>
+            List<TestClass> expected = new List<TestClass>
             {
                 new TestClass(5),
                 new TestClass(3)
             };
             string testData = "{ \"response\": { \"data\": [ { \"Number\": 5 }, { \"Number\": 3 } ] } }";
 
-            ObservableCollection<TestClass> result = sut.DeserializeCollection<TestClass>(testData);
+            List<TestClass> result = sut.DeserializeCollection<TestClass>(testData).ToList();
 
             Assert.Equal(expected.Count, result.Count);
             for (int i = 0; i < expected.Count; i++)
