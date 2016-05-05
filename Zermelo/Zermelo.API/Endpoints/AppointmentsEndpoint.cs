@@ -12,7 +12,7 @@ using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API.Endpoints
 {
-    class AppointmentsEndpoint : EndpointBase
+    public class AppointmentsEndpoint : EndpointBase
     {
         private const string _endpoint = "appointments";
 

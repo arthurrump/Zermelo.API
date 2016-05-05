@@ -10,7 +10,7 @@ namespace Zermelo.API.Models
     /// <summary>
     /// Model for Users, as described at https://zermelo.atlassian.net/wiki/display/DEV/User
     /// </summary>
-    class User
+    public class User
     {
         /// <summary>
         /// The identifier for a user. Usually a student id or abbreviation.

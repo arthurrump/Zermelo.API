@@ -11,7 +11,7 @@ using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API.Endpoints
 {
-    class AnnouncementsEndpoint : EndpointBase
+    public class AnnouncementsEndpoint : EndpointBase
     {
         private const string _endpoint = "announcements";
 

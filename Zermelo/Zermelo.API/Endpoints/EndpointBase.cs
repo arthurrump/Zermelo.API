@@ -10,14 +10,14 @@ using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API.Endpoints
 {
-    abstract internal class EndpointBase
+    abstract public class EndpointBase
     {
-        protected IAuthentication _auth;
-        protected IUrlBuilder _urlBuilder;
-        protected IHttpService _httpService;
-        protected IJsonService _jsonService;
+        internal IAuthentication _auth;
+        internal IUrlBuilder _urlBuilder;
+        internal IHttpService _httpService;
+        internal IJsonService _jsonService;
 
-        protected EndpointBase(IAuthentication auth, IUrlBuilder urlBuilder, IHttpService httpService, IJsonService jsonService)
+        internal EndpointBase(IAuthentication auth, IUrlBuilder urlBuilder, IHttpService httpService, IJsonService jsonService)
         {
             _auth = auth;
             _urlBuilder = urlBuilder;

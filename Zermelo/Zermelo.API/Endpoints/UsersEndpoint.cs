@@ -11,7 +11,7 @@ using Zermelo.API.Exceptions;
 
 namespace Zermelo.API.Endpoints
 {
-    class UsersEndpoint : EndpointBase
+    public class UsersEndpoint : EndpointBase
     {
         private const string _endpoint = "users";
 

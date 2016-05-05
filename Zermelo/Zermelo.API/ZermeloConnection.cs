@@ -11,7 +11,7 @@ using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API
 {
-    class ZermeloConnection
+    public class ZermeloConnection
     {
         IUrlBuilder _urlBuilder;
         IHttpService _httpService;
@@ -28,7 +28,7 @@ namespace Zermelo.API
             InitializeEndpoints();
         }
 
-        public ZermeloConnection(IAuthentication authentication)
+        public ZermeloConnection(Authentication authentication)
         {
             InitializeServices();
             InitializeAuth(authentication);
@@ -53,13 +53,13 @@ namespace Zermelo.API
 
         private void InitializeAuth(IAuthentication auth)
         {
-            Authentication = auth;
+            Authentication = auth as Authentication;
         }
 
         private async void InitializeAuth(string host, string code)
         {
             AuthenticationFactory authFactory = new AuthenticationFactory(_urlBuilder, _httpService, _jsonService);
-            Authentication = await authFactory.WithCode(host, code);
+            Authentication = (await authFactory.WithCode(host, code)) as Authentication;
         }
 
         private void InitializeEndpoints()
@@ -70,7 +70,7 @@ namespace Zermelo.API
         }
         #endregion
 
-        public IAuthentication Authentication { get; private set; }
+        public Authentication Authentication { get; private set; }
 
         public AppointmentsEndpoint Appointments { get; private set; }
 
