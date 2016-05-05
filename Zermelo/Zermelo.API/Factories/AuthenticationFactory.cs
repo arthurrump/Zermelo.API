@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zermelo.API.Exceptions;
 using Zermelo.API.Helpers;
 using Zermelo.API.Interfaces;
 using Zermelo.API.Services.Interfaces;
@@ -40,7 +41,7 @@ namespace Zermelo.API.Factories
             IHttpResponse httpResponse = await _httpService.PostAsync(url, "");
 
             if (httpResponse.StatusCode != 200)
-                throw new Exception($"{{ \"ErrorType\": \"HTTP\", \"HttpStatus\": \"{httpResponse.Status}\", \"HttpCode\": {httpResponse.StatusCode} }}");
+                throw new ZermeloHttpException(httpResponse);
 
             string json = httpResponse.Response;
             string token = _jsonService.GetValue<string>(json, "access_token");
