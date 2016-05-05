@@ -17,21 +17,21 @@ namespace Zermelo.API.Models
         /// The id of the announcement
         /// </summary>
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// The date from which the announcement should be shown
         /// </summary>
         [JsonProperty("start")]
         [JsonConverter(typeof(UnixTimeToDateTimeOffsetJsonConverter))]
-        public DateTimeOffset Start { get; set; }
+        public DateTimeOffset? Start { get; set; }
 
         /// <summary>
         /// The date until which the announcement should be shown
         /// </summary>
         [JsonProperty("end")]
         [JsonConverter(typeof(UnixTimeToDateTimeOffsetJsonConverter))]
-        public DateTimeOffset End { get; set; }
+        public DateTimeOffset? End { get; set; }
 
         /// <summary>
         /// The title of the announcement
