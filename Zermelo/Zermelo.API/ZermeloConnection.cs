@@ -11,6 +11,10 @@ using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API
 {
+    /// <summary>
+    /// This class gives an object that can be used to connect to the Zermelo API.
+    /// It has properties for the currently supported endpoints, that can be used to connect to the corresponding endpoint.
+    /// </summary>
     public class ZermeloConnection
     {
         IUrlBuilder _urlBuilder;
@@ -28,6 +32,11 @@ namespace Zermelo.API
             InitializeEndpoints();
         }
 
+        /// <summary>
+        /// Create a new ZermeloConnection.
+        /// </summary>
+        /// <param name="authentication">An authentication object with a specified host and token. 
+        /// This will be used to authenticate the user in the Zermelo API.</param>
         public ZermeloConnection(Authentication authentication)
         {
             DependencyHelper.Initialize(out _urlBuilder, out _httpService, out _jsonService);
@@ -50,12 +59,24 @@ namespace Zermelo.API
         }
         #endregion
 
+        /// <summary>
+        /// The host and token that are used to communicate with the Zermelo API.
+        /// </summary>
         public Authentication Authentication { get; private set; }
 
+        /// <summary>
+        /// Connects to the Appointments endpoint. Use this endpoint to get schedules.
+        /// </summary>
         public AppointmentsEndpoint Appointments { get; private set; }
 
+        /// <summary>
+        /// Connects to the Announcements endpoint. Use this endpoint to get information about announcements.
+        /// </summary>
         public AnnouncementsEndpoint Announcements { get; private set; }
 
+        /// <summary>
+        /// Connects to the Users endpoint. Use this endpoint to get information about users.
+        /// </summary>
         public UsersEndpoint Users { get; private set; }
     }
 }

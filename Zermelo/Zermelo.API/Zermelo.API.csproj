@@ -41,6 +41,7 @@
     <Compile Include="Endpoints\UsersEndpoint.cs" />
     <Compile Include="Exceptions\ZermeloHttpException.cs" />
     <Compile Include="Factories\AuthenticationFactory.cs" />
+    <Compile Include="Helpers\DependencyHelper.cs" />
     <Compile Include="Helpers\ListExtensions.cs" />
     <Compile Include="Helpers\StringExtensions.cs" />
     <Compile Include="Helpers\UnixTimeHelpers.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Services\Interfaces\IUrlBuilder.cs" />
     <Compile Include="Services\UrlBuilder.cs" />
     <Compile Include="Services\JsonService.cs" />
+    <Compile Include="ZermeloAuthenticator.cs" />
     <Compile Include="ZermeloConnection.cs" />
   </ItemGroup>
   <ItemGroup>
