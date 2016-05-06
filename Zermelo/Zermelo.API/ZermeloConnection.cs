@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zermelo.API.Endpoints;
-using Zermelo.API.Factories;
+using Zermelo.API.Helpers;
 using Zermelo.API.Interfaces;
 using Zermelo.API.Services;
 using Zermelo.API.Services.Interfaces;
@@ -30,36 +30,16 @@ namespace Zermelo.API
 
         public ZermeloConnection(Authentication authentication)
         {
-            InitializeServices();
+            DependencyHelper.Initialize(out _urlBuilder, out _httpService, out _jsonService);
             InitializeAuth(authentication);
-            InitializeEndpoints();
-        }
-
-        public ZermeloConnection(string host, string code)
-        {
-            InitializeServices();
-            InitializeAuth(host, code);
             InitializeEndpoints();
         }
         #endregion
 
         #region Initializers
-        private void InitializeServices()
-        {
-            _urlBuilder = new UrlBuilder();
-            _httpService = new HttpService();
-            _jsonService = new JsonService();
-        }
-
         private void InitializeAuth(IAuthentication auth)
         {
             Authentication = auth as Authentication;
-        }
-
-        private void InitializeAuth(string host, string code)
-        {
-            AuthenticationFactory authFactory = new AuthenticationFactory(_urlBuilder, _httpService, _jsonService);
-            Authentication = authFactory.WithCode(host, code) as Authentication;
         }
 
         private void InitializeEndpoints()
