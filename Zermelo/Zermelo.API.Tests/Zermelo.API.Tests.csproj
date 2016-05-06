@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Endpoints\AppointmentsEndpointTests.cs" />
     <Compile Include="Helpers\StringExtensionsTests.cs" />
     <Compile Include="Helpers\UnixTimeHelpersTests.cs" />
     <Compile Include="Helpers\UnixTimeToDateTimeOffsetJsonConverterTests.cs" />
