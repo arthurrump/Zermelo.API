@@ -34,7 +34,7 @@ namespace Zermelo.API.Endpoints
         /// <returns>List of appointments.</returns>
         public async Task<IEnumerable<Appointment>> GetByDateAsync(DateTimeOffset start, DateTimeOffset end, string user = "~me", List<string> fields = null)
         {
-            if (start <= end)
+            if (start >= end)
                 throw new ArgumentOutOfRangeException(nameof(end), end,
                     $"The value of the {nameof(end)} parameter should be later in time " + 
                     $"than the value of the {nameof(start)} parameter (value: {start.ToString()}).");
