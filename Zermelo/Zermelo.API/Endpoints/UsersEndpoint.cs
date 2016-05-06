@@ -11,6 +11,11 @@ using Zermelo.API.Exceptions;
 
 namespace Zermelo.API.Endpoints
 {
+    /// <summary>
+    /// This endpoint can give you information about Users.
+    /// </summary>
+    /// <seealso cref="User"/>
+    /// <seealso cref="ZermeloConnection"/>
     public class UsersEndpoint : EndpointBase
     {
         private const string _endpoint = "users";
@@ -25,8 +30,8 @@ namespace Zermelo.API.Endpoints
         /// Get the current authenticated user.
         /// </summary>
         /// <param name="fields">
-        /// The fields (in original json names) to get. Defaults to <c>null</c>, which gets the server defaults.
-        /// An empty list will also result in the server defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
+        /// An empty list will also result in the defaults.
         /// </param>
         /// <returns>The current authenticated user.</returns>
         public async Task<User> GetCurrentUserAsync(List<string> fields = null)
@@ -39,10 +44,10 @@ namespace Zermelo.API.Endpoints
         /// </summary>
         /// <param name="code">The code (a student number or teacher abbreviation) of the user.</param>
         /// <param name="fields">
-        /// The fields (in original json names) to get. Defaults to <c>null</c>, which gets the server defaults.
-        /// An empty list will also result in the server defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
+        /// An empty list will also result in the defaults.
         /// </param>
-        /// <returns>The requested user or, if the user's not found, null.</returns>
+        /// <returns>The requested user or, if the user's not found, <c>null</c>.</returns>
         public async Task<User> GetByCodeAsync(string code, List<string> fields = null)
         {
             IEnumerable<User> result = await GetByCustomUrlOptionsAsync<User>($"{_endpoint}/{code}", null, fields);
@@ -57,8 +62,8 @@ namespace Zermelo.API.Endpoints
         /// Get a list of all users.
         /// </summary>
         /// <param name="fields">
-        /// The fields (in original json names) to get. Defaults to <c>null</c>, which gets the server defaults.
-        /// An empty list will also result in the server defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
+        /// An empty list will also result in the defaults.
         /// </param>
         /// <returns>A list of all users.</returns>
         public async Task<IEnumerable<User>> GetAllAsync(List<string> fields = null)
@@ -71,8 +76,8 @@ namespace Zermelo.API.Endpoints
         /// </summary>
         /// <param name="urlOptions">The options you want to be in the url.</param>
         /// <param name="fields">
-        /// The fields (in original json names) to get. Defaults to <c>null</c>, which gets the server defaults.
-        /// An empty list will also result in the server defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
+        /// An empty list will also result in the defaults.
         /// </param>
         /// <returns>The requested users.</returns>
         public async Task<IEnumerable<User>> GetByCustomUrlOptionsAsync(Dictionary<string, string> urlOptions, List<string> fields = null)

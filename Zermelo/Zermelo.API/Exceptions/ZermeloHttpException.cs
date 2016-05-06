@@ -7,6 +7,9 @@ using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API.Exceptions
 {
+    /// <summary>
+    /// This exception gets thrown if the statuscode of an HTTP request does not indicate success.
+    /// </summary>
     public class ZermeloHttpException : Exception
     {
         internal ZermeloHttpException(IHttpResponse httpResponse)
@@ -34,8 +37,19 @@ namespace Zermelo.API.Exceptions
             this.ResponseContent = httpResponse.Response;
         }
 
+        /// <summary>
+        /// The statuscode of the HTTP request.
+        /// </summary>
         public int StatusCode { get; private set; }
+
+        /// <summary>
+        /// The status of the HTTP request in words.
+        /// </summary>
         public string Status { get; private set; }
+
+        /// <summary>
+        /// The content of the response.
+        /// </summary>
         public string ResponseContent { get; private set; }
     }
 }

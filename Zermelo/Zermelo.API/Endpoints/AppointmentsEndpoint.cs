@@ -12,6 +12,11 @@ using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API.Endpoints
 {
+    /// <summary>
+    /// This endpoint can give you information about Appointments that make up the schedule of a user.
+    /// </summary>
+    /// <seealso cref="Appointment"/>
+    /// <seealso cref="ZermeloConnection"/>
     public class AppointmentsEndpoint : EndpointBase
     {
         private const string _endpoint = "appointments";
@@ -28,8 +33,8 @@ namespace Zermelo.API.Endpoints
         /// <param name="end">The date until which to get appointments.</param>
         /// <param name="user">The user to get appointments for. Defaults to <c>"~me"</c> to get appointments for the current user.</param>
         /// <param name="fields">
-        /// The fields (in original json names) to get. Defaults to <c>null</c>, which gets the server defaults.
-        /// An empty list will also result in the server defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
+        /// An empty list will also result in the defaults.
         /// </param>
         /// <returns>List of appointments.</returns>
         public async Task<IEnumerable<Appointment>> GetByDateAsync(DateTimeOffset start, DateTimeOffset end, string user = "~me", List<string> fields = null)
@@ -50,14 +55,14 @@ namespace Zermelo.API.Endpoints
         }
 
         /// <summary>
-        /// Get a specific appointment by it's id.
+        /// Get a specific <see cref="Appointment"/> by it's Id.
         /// </summary>
-        /// <param name="id">The id of the appointment to get.</param>
+        /// <param name="id">The <see cref="Appointment.Id"/> of the appointment to get.</param>
         /// <param name="fields">
-        /// The fields (in original json names) to get. Defaults to <c>null</c>, which gets the server defaults.
-        /// An empty list will also result in the server defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
+        /// An empty list will also result in the defaults.
         /// </param>
-        /// <returns>The requested appointment, or, if it's not found, null.</returns>
+        /// <returns>The requested appointment, or, if it's not found, <c>null</c>.</returns>
         public async Task<Appointment> GetSingleByIdAsync(long id, List<string> fields = null)
         {
             Dictionary<string, string> urlOptions = new Dictionary<string, string>
@@ -74,12 +79,12 @@ namespace Zermelo.API.Endpoints
         }
 
         /// <summary>
-        /// Get all versions of an appointment instance by it's <c>InstanceId</c>.
+        /// Get all versions of an appointment instance by it's <see cref="Appointment.InstanceId"/>.
         /// </summary>
-        /// <param name="instanceId">The id of the appointment instance.</param>
+        /// <param name="instanceId">The <see cref="Appointment.InstanceId"/> of the appointment instance.</param>
         /// <param name="fields">
-        /// The fields (in original json names) to get. Defaults to <c>null</c>, which gets the server defaults.
-        /// An empty list will also result in the server defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
+        /// An empty list will also result in the defaults.
         /// </param>
         /// <returns>All versions of an appointment instance.</returns>
         public async Task<IEnumerable<Appointment>> GetAllVersionsByInstanceIdAsync(long instanceId, List<string> fields = null)
@@ -97,8 +102,8 @@ namespace Zermelo.API.Endpoints
         /// </summary>
         /// <param name="urlOptions">The options you want to be in the url.</param>
         /// <param name="fields">
-        /// The fields (in original json names) to get. Defaults to <c>null</c>, which gets the server defaults.
-        /// An empty list will also result in the server defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
+        /// An empty list will also result in the defaults.
         /// </param>
         /// <returns>The requested appointments.</returns>
         public async Task<IEnumerable<Appointment>> GetByCustomUrlOptionsAsync(Dictionary<string, string> urlOptions, List<string> fields = null)
