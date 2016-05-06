@@ -19,13 +19,12 @@ namespace Zermelo.API.Helpers
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            if (objectType != typeof(DateTimeOffset))
-                throw new ArgumentException($"This converter can only convert to {nameof(DateTimeOffset)}.", nameof(objectType));
+            object value = reader.Value;
 
-            if (reader.TokenType == JsonToken.Null)
-                throw new JsonSerializationException($"Cannot convert null value to {objectType}");
+            if (value == null)
+                return null;
 
-            long ticks = (long)reader.Value;
+            long ticks = (long)value;
 
             DateTimeOffset d = UnixTimeHelpers.FromUnixTimeSeconds(ticks);
 
