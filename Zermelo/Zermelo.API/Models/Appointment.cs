@@ -31,149 +31,149 @@ namespace Zermelo.API.Models
         /// The id of this version of the appointment.
         /// </summary>
         [JsonProperty("id")]
-        public long? Id { get; set; }
+        public long? Id { get; internal set; }
 
         /// <summary>
         /// The id of this instance of the appointment. Every instance has one or more versions.
         /// </summary>
         [JsonProperty("appointmentInstance")]
-        public long? InstanceId { get; set; }
+        public long? InstanceId { get; internal set; }
 
         /// <summary>
         /// The start time of the appointment.
         /// </summary>
         [JsonProperty("start")]
         [JsonConverter(typeof(UnixTimeToDateTimeOffsetJsonConverter))]
-        public DateTimeOffset? Start { get; set; }
+        public DateTimeOffset? Start { get; internal set; }
 
         /// <summary>
         /// The end time of the appointment (the first moment the appointment is no longer taking place).
         /// </summary>
         [JsonProperty("end")]
         [JsonConverter(typeof(UnixTimeToDateTimeOffsetJsonConverter))]
-        public DateTimeOffset? End { get; set; }
+        public DateTimeOffset? End { get; internal set; }
 
         /// <summary>
         /// Timeslot during which the appointment starts.
         /// </summary>
         [JsonProperty("startTimeSlot")]
-        public int? StartTimeSlot { get; set; }
+        public int? StartTimeSlot { get; internal set; }
 
         /// <summary>
         /// Timeslot during which the appointment ends.
         /// </summary>
         [JsonProperty("endTimeSlot")]
-        public int? EndTimeSlot { get; set; }
+        public int? EndTimeSlot { get; internal set; }
 
         /// <summary>
         /// List of subjects.
         /// </summary>
         [JsonProperty("subjects")]
-        public IEnumerable<string> Subjects { get; set; }
+        public IEnumerable<string> Subjects { get; internal set; }
 
         /// <summary>
         /// The type of appointment.
         /// </summary>
         [JsonProperty("type")]
         [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public AppointmentType? Type { get; set; }
+        public AppointmentType? Type { get; internal set; }
 
         /// <summary>
         /// A remark for the appointment.
         /// </summary>
         [JsonProperty("remark")]
-        public string Remark { get; set; }
+        public string Remark { get; internal set; }
 
         /// <summary>
         /// The locations (classrooms) where the appointment takes place.
         /// </summary>
         [JsonProperty("locations")]
-        public IEnumerable<string> Locations { get; set; }
+        public IEnumerable<string> Locations { get; internal set; }
 
         /// <summary>
         /// The teachers participating in the appointment.
         /// </summary>
         [JsonProperty("teachers")]
-        public IEnumerable<string> Teachers { get; set; }
+        public IEnumerable<string> Teachers { get; internal set; }
 
         /// <summary>
         /// The groups of students participating in the appointment.
         /// </summary>
         [JsonProperty("groups")]
-        public IEnumerable<string> Groups { get; set; }
+        public IEnumerable<string> Groups { get; internal set; }
 
         /// <summary>
         /// The date this version of the appointment was created.
         /// </summary>
         [JsonProperty("created")]
         [JsonConverter(typeof(UnixTimeToDateTimeOffsetJsonConverter))]
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; internal set; }
 
         /// <summary>
         /// The date this version of the appointment was last modified.
         /// </summary>
         [JsonProperty("lastModified")]
         [JsonConverter(typeof(UnixTimeToDateTimeOffsetJsonConverter))]
-        public DateTimeOffset? LastModified { get; set; }
+        public DateTimeOffset? LastModified { get; internal set; }
 
         /// <summary>
         /// True if this appointment is part of the most up-to-date schedule. Only one version of an instance can be valid; a valid version can still be canceled.
         /// </summary>
         [JsonProperty("valid")]
-        public bool? Valid { get; set; }
+        public bool? Valid { get; internal set; }
 
         /// <summary>
         /// This appointment should not be shown to the user if this is true. An hidden appointment cannot be valid.
         /// </summary>
         [JsonProperty("hidden")]
-        public bool? Hidden { get; set; }
+        public bool? Hidden { get; internal set; }
 
         /// <summary>
         /// True when this version is the first non-hidden one.
         /// </summary>
         [JsonProperty("base")]
-        public bool? Base { get; set; }
+        public bool? Base { get; internal set; }
 
         /// <summary>
         /// True if the appointment is cancelled and no attendance is required.
         /// </summary>
         [JsonProperty("cancelled")]
-        public bool? Cancelled { get; set; }
+        public bool? Cancelled { get; internal set; }
 
         /// <summary>
         /// True if the appointment is modified.
         /// </summary>
         [JsonProperty("modified")]
-        public bool? Modified { get; set; }
+        public bool? Modified { get; internal set; }
 
         /// <summary>
         /// True if the time or location of the appointment is changed.
         /// </summary>
         [JsonProperty("moved")]
-        public bool? Moved { get; set; }
+        public bool? Moved { get; internal set; }
 
         /// <summary>
         /// True if the appointment was not originally scheduled.
         /// </summary>
         [JsonProperty("new")]
-        public bool? New { get; set; }
+        public bool? New { get; internal set; }
 
         /// <summary>
         /// Textual description of the change.
         /// </summary>
         [JsonProperty("changeDescription")]
-        public string ChangeDescription { get; set; }
+        public string ChangeDescription { get; internal set; }
 
         /// <summary>
         /// The id of the branch of the school this appointment belongs to.
         /// </summary>
         [JsonProperty("branchOfSchool")]
-        public long? BranchId { get; set; }
+        public long? BranchId { get; internal set; }
 
         /// <summary>
         /// The branch of the school this appointment belongs to.
         /// </summary>
         [JsonProperty("branch")]
-        public string Branch { get; set; }
+        public string Branch { get; internal set; }
     }
 }
