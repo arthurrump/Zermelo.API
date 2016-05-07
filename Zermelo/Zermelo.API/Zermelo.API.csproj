@@ -37,6 +37,7 @@
     <Compile Include="Authentication.cs" />
     <Compile Include="Endpoints\AnnouncementsEndpoint.cs" />
     <Compile Include="Endpoints\AppointmentsEndpoint.cs" />
+    <Compile Include="Endpoints\AuthenticationEndpoint.cs" />
     <Compile Include="Endpoints\EndpointBase.cs" />
     <Compile Include="Endpoints\UsersEndpoint.cs" />
     <Compile Include="Exceptions\ZermeloHttpException.cs" />

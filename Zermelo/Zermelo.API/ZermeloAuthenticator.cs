@@ -13,6 +13,8 @@ namespace Zermelo.API
     /// This class gives an object that can be used to generate an <see cref="Authentication"/> object using an authorization code.
     /// The <see cref="Authentication"/> object can than be used to connect to the Zermelo API using an <see cref="ZermeloConnection"/> object.
     /// </summary>
+    /// <seealso cref="Authentication"/>
+    /// <seealso cref="ZermeloConnection"/>
     public class ZermeloAuthenticator
     {
         IUrlBuilder _urlBuilder;

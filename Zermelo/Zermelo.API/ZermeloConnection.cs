@@ -15,8 +15,8 @@ namespace Zermelo.API
     /// This class gives an object that can be used to connect to the Zermelo API.
     /// It has properties for the currently supported endpoints, that can be used to connect to the corresponding endpoint.
     /// </summary>
-    /// <seealso cref="API.Authentication"/>
     /// <seealso cref="ZermeloAuthenticator"/>
+    /// <seealso cref="AuthenticationEndpoint"/>
     /// <seealso cref="AppointmentsEndpoint"/>
     /// <seealso cref="AnnouncementsEndpoint"/>
     /// <seealso cref="UsersEndpoint"/>
@@ -33,8 +33,7 @@ namespace Zermelo.API
             _httpService = httpService;
             _jsonService = jsonService;
 
-            InitializeAuth(authentication);
-            InitializeEndpoints();
+            InitializeEndpoints(authentication);
         }
 
         /// <summary>
@@ -47,29 +46,24 @@ namespace Zermelo.API
         public ZermeloConnection(Authentication authentication)
         {
             DependencyHelper.Initialize(out _urlBuilder, out _httpService, out _jsonService);
-            InitializeAuth(authentication);
-            InitializeEndpoints();
+
+            InitializeEndpoints(authentication);
         }
         #endregion
 
-        #region Initializers
-        private void InitializeAuth(IAuthentication auth)
+        private void InitializeEndpoints(IAuthentication auth)
         {
-            Authentication = auth as Authentication;
+            Authentication = new AuthenticationEndpoint(auth, _urlBuilder, _httpService, _jsonService);
+            Appointments = new AppointmentsEndpoint(auth, _urlBuilder, _httpService, _jsonService);
+            Announcements = new AnnouncementsEndpoint(auth, _urlBuilder, _httpService, _jsonService);
+            Users = new UsersEndpoint(auth, _urlBuilder, _httpService, _jsonService);
         }
-
-        private void InitializeEndpoints()
-        {
-            Appointments = new AppointmentsEndpoint(Authentication, _urlBuilder, _httpService, _jsonService);
-            Announcements = new AnnouncementsEndpoint(Authentication, _urlBuilder, _httpService, _jsonService);
-            Users = new UsersEndpoint(Authentication, _urlBuilder, _httpService, _jsonService);
-        }
-        #endregion
 
         /// <summary>
-        /// The <see cref="Authentication"/> object, containing the host and token that are used to communicate with the Zermelo API.
+        /// Use this endpoint to get information about authentication.
+        /// Take a look at <see cref="AuthenticationEndpoint"/> for all available methods.
         /// </summary>
-        public Authentication Authentication { get; private set; }
+        public AuthenticationEndpoint Authentication { get; private set; }
 
         /// <summary>
         /// Connects to the Appointments endpoint. Use this endpoint to get schedules. 
