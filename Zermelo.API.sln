@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zermelo.API", "Zermelo.API\Zermelo.API.csproj", "{06A3B817-06DA-499A-BD8E-E4C4DA8E3EA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zermelo.API.Tests", "Zermelo.API.Tests\Zermelo.API.Tests.csproj", "{198B3493-85E9-419A-8F8A-81B019A19994}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06A3B817-06DA-499A-BD8E-E4C4DA8E3EA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06A3B817-06DA-499A-BD8E-E4C4DA8E3EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06A3B817-06DA-499A-BD8E-E4C4DA8E3EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06A3B817-06DA-499A-BD8E-E4C4DA8E3EA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{198B3493-85E9-419A-8F8A-81B019A19994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198B3493-85E9-419A-8F8A-81B019A19994}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198B3493-85E9-419A-8F8A-81B019A19994}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198B3493-85E9-419A-8F8A-81B019A19994}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

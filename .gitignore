@@ -190,7 +190,7 @@ ClientBin/
 *~
 *.dbmdl
 *.dbproj.schemaview
-# *.pfx # (ignoring this breaks the VSTS build system)
+*.pfx
 *.publishsettings
 node_modules/
 orleans.codegen.cs

@@ -1,3 +1,3 @@
-# Zermelo
+# Zermelo.API
 
-This repo contains the Schoolrooster voor Zermelo Windows Phone 8.1 app and the Zermelo PCL for connecting to the Zermelo Backend API.
+This repo contains the Zermelo.API PCL for connecting to the Zermelo API.
