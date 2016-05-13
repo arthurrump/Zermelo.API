@@ -10,8 +10,11 @@ using Zermelo.API.Services.Interfaces;
 namespace Zermelo.API.Endpoints
 {
     /// <summary>
-    /// This endpoint will help you with you authentication needs.
+    /// This endpoint will help you with your authentication needs.
     /// </summary>
+    /// <remarks>
+    /// This endpoint does not have an equivalent at the Zermelo API, it's here only for your convenience.
+    /// </remarks>
     /// <seealso cref="Authentication"/>
     /// <seealso cref="ZermeloAuthenticator"/>
     /// <seealso cref="ZermeloConnection"/>

@@ -13,6 +13,11 @@ namespace Zermelo.API
     /// This class gives an object that can be used to generate an <see cref="Authentication"/> object using an authorization code.
     /// The <see cref="Authentication"/> object can than be used to connect to the Zermelo API using an <see cref="ZermeloConnection"/> object.
     /// </summary>
+    /// <remarks>
+    /// For more information on the authentication flow of the Zermelo API, visit the official documentation 
+    /// &lt;a href="https://zermelo.atlassian.net/wiki/display/DEV/Rest+Authentication#RestAuthentication-Obtainanauthorizationcodefromtheuser"&gt;
+    /// over here&lt;/a&gt;.
+    /// </remarks>
     /// <seealso cref="Authentication"/>
     /// <seealso cref="ZermeloConnection"/>
     public class ZermeloAuthenticator

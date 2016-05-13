@@ -9,8 +9,12 @@ using Zermelo.API.Helpers;
 namespace Zermelo.API.Models
 {
     /// <summary>
-    /// Model for Announcements, as described at https://zermelo.atlassian.net/wiki/display/DEV/Announcement
+    /// Model for Announcements, messages that don't map to a single appointment. Mostly used for global schedule changes.
     /// </summary>
+    /// <remarks>
+    /// Take a look at the &lt;a href="https://zermelo.atlassian.net/wiki/display/DEV/Announcement"&gt;official documentation&lt;/a&gt; 
+    /// for more information about Announcements.
+    /// </remarks>
     /// <seealso cref="API.Endpoints.AnnouncementsEndpoint"/>
     public class Announcement
     {

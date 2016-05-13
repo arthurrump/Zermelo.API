@@ -15,6 +15,10 @@ namespace Zermelo.API.Endpoints
     /// <summary>
     /// This endpoint can give you information about Appointments that make up the schedule of a user.
     /// </summary>
+    /// <remarks>
+    /// To learn more about this endpoint, take a look at the official documentation 
+    /// &lt;a href="https://zermelo.atlassian.net/wiki/display/DEV/Appointment"&gt;here&lt;/a&gt;.
+    /// </remarks>
     /// <seealso cref="Appointment"/>
     /// <seealso cref="ZermeloConnection"/>
     public class AppointmentsEndpoint : EndpointBase

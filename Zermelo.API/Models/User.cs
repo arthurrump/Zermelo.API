@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 namespace Zermelo.API.Models
 {
     /// <summary>
-    /// Model for Users, as described at https://zermelo.atlassian.net/wiki/display/DEV/User
+    /// Model for Users, the actual persons in the school: students, teachers, and sometimes even parents.
     /// </summary>
+    /// <remarks>
+    /// For more information about users, visit the official documentation
+    /// &lt;a href="https://zermelo.atlassian.net/wiki/display/DEV/User"&gt;here&lt;/a&gt;.
+    /// </remarks>
     /// <seealso cref="API.Endpoints.UsersEndpoint"/>
     public class User
     {
