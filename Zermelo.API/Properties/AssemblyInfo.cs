@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Zermelo.API")]
-[assembly: AssemblyDescription("An API for Zermelo's zPortal scheduling program for schools.")]
+[assembly: AssemblyDescription("Connect to Zermelo from your .NET app")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Zermelo.API")]
-[assembly: AssemblyCopyright("Copyright ©  2016 Arthur Rump")]
+[assembly: AssemblyCopyright("Copyright 2016 Arthur Rump")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
