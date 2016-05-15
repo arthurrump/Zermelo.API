@@ -5,16 +5,14 @@ Disclaimer: this project is created by a third party and not associated with Zer
 Zermelo.API is a PCL (Portable Class Library, a Library of Classes that is Portable (can be used on multiple platforms)) that provides a .NET API to connect to the Zermelo API. The Zermelo API is an API created by Zermelo Software that allows third parties to integrate with their scheduling software that's used by many Dutch schools. This PCL abstracts the Zermelo API into easy to use methods and classes that can be used by a .NET application.
 
 ## Links
-<!-- TODO: Add links -->
-- [NuGet]()
-- [Documentation]()
-- [Source on Git**b]()
+- [NuGet](https://www.nuget.org/packages/Zermelo.API)
+- [Documentation](http://arthurrump.github.io/zermelo.api)
+- [Source on GitHub](https://github.com/arthurrump/Zermelo.API)
 
 ## Projects using this library
-<!-- TODO: Update link -->
-- Schoolrooster voor Zermelo ([Microsoft Store](https://www.microsoft.com/store/apps/9nblggh5fdl2), [Git**b]())
+- Schoolrooster voor Zermelo ([Microsoft Store](https://www.microsoft.com/store/apps/9nblggh5fdl2))
 
-Have you created a very cool project, that should absolutely be listed here? Just add it and create a <!-- TODO: Choose -->Pull/Merge Request!
+Have you created a very cool project, that should absolutely be listed here? Just add it and create a Pull Request!
 
 ## FAQ
 ### What version of the API is supported?
