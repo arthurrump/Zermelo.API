@@ -13,7 +13,7 @@ namespace Zermelo.API.Models
     /// </summary>
     /// <remarks>
     /// To learn more about appointments, take a look at the official documentation
-    /// &lt;a href="https://zermelo.atlassian.net/wiki/display/DEV/Appointment"&gt;over here&lt;/a&gt;.
+    /// [over here](https://zermelo.atlassian.net/wiki/display/DEV/Appointment).
     /// </remarks>
     /// <seealso cref="API.Endpoints.AppointmentsEndpoint"/>
     public class Appointment

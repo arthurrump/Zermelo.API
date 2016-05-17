@@ -15,8 +15,7 @@ namespace Zermelo.API
     /// </summary>
     /// <remarks>
     /// For more information on the authentication flow of the Zermelo API, visit the official documentation 
-    /// &lt;a href="https://zermelo.atlassian.net/wiki/display/DEV/Rest+Authentication#RestAuthentication-Obtainanauthorizationcodefromtheuser"&gt;
-    /// over here&lt;/a&gt;.
+    /// [over here](https://zermelo.atlassian.net/wiki/display/DEV/Rest+Authentication#RestAuthentication-Obtainanauthorizationcodefromtheuser).
     /// </remarks>
     /// <example><code>
     /// ZermeloAuthenticator authenticator = new ZermeloAuthenticator();

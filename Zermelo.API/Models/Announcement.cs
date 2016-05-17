@@ -12,7 +12,7 @@ namespace Zermelo.API.Models
     /// Model for Announcements, messages that don't map to a single appointment. Mostly used for global schedule changes.
     /// </summary>
     /// <remarks>
-    /// Take a look at the &lt;a href="https://zermelo.atlassian.net/wiki/display/DEV/Announcement"&gt;official documentation&lt;/a&gt; 
+    /// Take a look at the [official documentation](https://zermelo.atlassian.net/wiki/display/DEV/Announcement) 
     /// for more information about Announcements.
     /// </remarks>
     /// <seealso cref="API.Endpoints.AnnouncementsEndpoint"/>

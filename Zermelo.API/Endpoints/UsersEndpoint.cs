@@ -16,7 +16,7 @@ namespace Zermelo.API.Endpoints
     /// </summary>
     /// <remarks>
     /// For more information about this endpoint, visit the official documentation
-    /// &lt;a href="https://zermelo.atlassian.net/wiki/display/DEV/User"&gt;over here&lt;/a&gt;.
+    /// [over here](https://zermelo.atlassian.net/wiki/display/DEV/User).
     /// </remarks>
     /// <seealso cref="User"/>
     /// <seealso cref="ZermeloConnection"/>

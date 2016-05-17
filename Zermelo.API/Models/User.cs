@@ -12,7 +12,7 @@ namespace Zermelo.API.Models
     /// </summary>
     /// <remarks>
     /// For more information about users, visit the official documentation
-    /// &lt;a href="https://zermelo.atlassian.net/wiki/display/DEV/User"&gt;here&lt;/a&gt;.
+    /// [here](https://zermelo.atlassian.net/wiki/display/DEV/User).
     /// </remarks>
     /// <seealso cref="API.Endpoints.UsersEndpoint"/>
     public class User

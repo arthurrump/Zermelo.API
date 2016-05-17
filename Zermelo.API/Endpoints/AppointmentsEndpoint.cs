@@ -17,7 +17,7 @@ namespace Zermelo.API.Endpoints
     /// </summary>
     /// <remarks>
     /// To learn more about this endpoint, take a look at the official documentation 
-    /// &lt;a href="https://zermelo.atlassian.net/wiki/display/DEV/Appointment"&gt;here&lt;/a&gt;.
+    /// [here](https://zermelo.atlassian.net/wiki/display/DEV/Appointment).
     /// </remarks>
     /// <seealso cref="Appointment"/>
     /// <seealso cref="ZermeloConnection"/>
