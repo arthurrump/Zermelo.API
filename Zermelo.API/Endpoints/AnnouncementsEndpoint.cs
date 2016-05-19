@@ -14,6 +14,10 @@ namespace Zermelo.API.Endpoints
     /// <summary>
     /// This endpoint can give you information about Announcements.
     /// </summary>
+    /// <remarks>
+    /// For more information about this endpoint, visit the
+    /// [official documentation](https://zermelo.atlassian.net/wiki/display/DEV/Announcement).
+    /// </remarks>
     /// <seealso cref="Announcement"/>
     /// <seealso cref="ZermeloConnection"/>
     public class AnnouncementsEndpoint : EndpointBase

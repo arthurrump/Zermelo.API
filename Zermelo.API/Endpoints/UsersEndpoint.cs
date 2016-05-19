@@ -14,6 +14,10 @@ namespace Zermelo.API.Endpoints
     /// <summary>
     /// This endpoint can give you information about Users.
     /// </summary>
+    /// <remarks>
+    /// For more information about this endpoint, visit the official documentation
+    /// [over here](https://zermelo.atlassian.net/wiki/display/DEV/User).
+    /// </remarks>
     /// <seealso cref="User"/>
     /// <seealso cref="ZermeloConnection"/>
     public class UsersEndpoint : EndpointBase

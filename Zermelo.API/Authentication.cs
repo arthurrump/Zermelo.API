@@ -14,6 +14,7 @@ namespace Zermelo.API
     /// To create an <see cref="Authentication"/> object using an authorization code, use the <see cref="ZermeloAuthenticator"/> class.
     /// If you already have a token, you can use the constructor to create an <see cref="Authentication"/> object.
     /// </summary>
+    /// <seealso cref="ZermeloAuthenticator"/>
     public class Authentication : IAuthentication
     {
         public Authentication(string host, string token)

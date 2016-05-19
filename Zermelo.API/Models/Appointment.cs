@@ -9,8 +9,12 @@ using Zermelo.API.Helpers;
 namespace Zermelo.API.Models
 {
     /// <summary>
-    /// Model for Appointments, as described at https://zermelo.atlassian.net/wiki/display/DEV/Appointment
+    /// Model for Appointments, usually lessons, but including other activities, that make up the schedule.
     /// </summary>
+    /// <remarks>
+    /// To learn more about appointments, take a look at the official documentation
+    /// [over here](https://zermelo.atlassian.net/wiki/display/DEV/Appointment).
+    /// </remarks>
     /// <seealso cref="API.Endpoints.AppointmentsEndpoint"/>
     public class Appointment
     {

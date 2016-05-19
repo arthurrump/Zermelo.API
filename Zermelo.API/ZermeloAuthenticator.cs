@@ -13,6 +13,14 @@ namespace Zermelo.API
     /// This class gives an object that can be used to generate an <see cref="Authentication"/> object using an authorization code.
     /// The <see cref="Authentication"/> object can than be used to connect to the Zermelo API using an <see cref="ZermeloConnection"/> object.
     /// </summary>
+    /// <remarks>
+    /// For more information on the authentication flow of the Zermelo API, visit the official documentation 
+    /// [over here](https://zermelo.atlassian.net/wiki/display/DEV/Rest+Authentication#RestAuthentication-Obtainanauthorizationcodefromtheuser).
+    /// </remarks>
+    /// <example><code>
+    /// ZermeloAuthenticator authenticator = new ZermeloAuthenticator();
+    /// Authentication auth = await authenticator.GetAuthenticationAsync("school", "123456789123");
+    /// </code></example>
     /// <seealso cref="Authentication"/>
     /// <seealso cref="ZermeloConnection"/>
     public class ZermeloAuthenticator
@@ -31,6 +39,9 @@ namespace Zermelo.API
         /// <summary>
         /// Create a new <see cref="ZermeloAuthenticator"/> object.
         /// </summary>
+        /// <example><code>
+        /// ZermeloAuthenticator authenticator = new ZermeloAuthenticator();
+        /// </code></example>
         public ZermeloAuthenticator()
         {
             DependencyHelper.Initialize(out _urlBuilder, out _httpService, out _jsonService);
@@ -44,6 +55,9 @@ namespace Zermelo.API
         /// <param name="code">The authentication code. The user can find this code in the portal using the "Koppel App" screen.</param>
         /// <returns>An <see cref="Authentication"/> object that can be used to connect 
         /// to the Zermelo API using a <see cref="ZermeloConnection"/> object.</returns>
+        /// <example><code>
+        /// Authentication auth = await authenticator.GetAuthenticationAsync("school", "123456789123");
+        /// </code></example>
         public async Task<Authentication> GetAuthenticationAsync(string host, string code)
         {
             AuthenticationFactory authFactory = new AuthenticationFactory(_urlBuilder, _httpService, _jsonService);
