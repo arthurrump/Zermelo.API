@@ -6,7 +6,7 @@ Zermelo.API is a PCL (Portable Class Library, a Library of Classes that is Porta
 
 ## Links
 - [NuGet](https://www.nuget.org/packages/Zermelo.API)
-- [Documentation](http://arthurrump.github.io/zermelo.api)
+- [Documentation](http://arthurrump.github.io/Zermelo.API)
 - [Source on GitHub](https://github.com/arthurrump/Zermelo.API)
 
 ## Projects using this library
