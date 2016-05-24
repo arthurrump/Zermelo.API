@@ -8,7 +8,7 @@
     <owners>Arthur Rump</owners>
     <licenseUrl>https://raw.githubusercontent.com/arthurrump/Zermelo.API/master/LICENSE.md</licenseUrl>
     <projectUrl>http://arthurrump.github.io/zermelo.api</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/arthurrump/Zermelo.API/master/art/nuget_logo.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/arthurrump/Zermelo.API/master/Zermelo.API/art/nuget_logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Connect to Zermelo from your .NET app. This is a third party library, we're not affiliated with Zermelo Software BV.</description>
     <copyright>Copyright 2016 Arthur Rump</copyright>
