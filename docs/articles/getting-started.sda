@@ -1,0 +1,7 @@
+This article will help you getting started with the Zermelo.API library. To start using it, you'll first need to reference the package in your project. There are multiple ways to do this, but the easiest way is using NuGet.
+
+## 1. Referencing the package via NuGet
+
+```
+PM> Install-Package Zermelo.API -Pre
+```
