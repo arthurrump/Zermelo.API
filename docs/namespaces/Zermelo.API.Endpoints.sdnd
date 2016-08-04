@@ -1,0 +1,1 @@
+This namespace contains endpoints, which can be accessed via properties on the [`ZermeloConnection`]({{type-link:Zermelo.API.ZermeloConnection}}) class.
