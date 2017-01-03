@@ -35,8 +35,9 @@ namespace Zermelo.API.Helpers
         {
             long ticks;
 
-            if (value is DateTimeOffset d)
+            if (value is DateTimeOffset)
             {
+                DateTimeOffset d = (DateTimeOffset)value;
                 ticks = UnixTimeHelpers.ToUnixTimeSeconds(d.UtcDateTime);
             }
             else
