@@ -35,21 +35,16 @@ namespace Zermelo.API.Helpers
         {
             long ticks;
 
-            if (value is DateTimeOffset)
+            if (value is DateTimeOffset d)
             {
-                DateTimeOffset dateTimeOffset = (DateTimeOffset)value;
-                DateTimeOffset utcDateTimeOffset = dateTimeOffset.ToUniversalTime();
-                ticks = UnixTimeHelpers.ToUnixTimeSeconds(utcDateTimeOffset.UtcDateTime);
+                ticks = UnixTimeHelpers.ToUnixTimeSeconds(d.UtcDateTime);
             }
             else
             {
                 throw new JsonSerializationException($"Expected {nameof(DateTimeOffset)} object value.");
             }
 
-            writer.WriteStartConstructor("Date");
             writer.WriteValue(ticks);
-            writer.WriteEndConstructor();
-
         }
     }
 }
