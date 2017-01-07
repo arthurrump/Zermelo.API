@@ -1,6 +1,6 @@
 To use the Zermelo.API library, you'll need to reference it in your project. The easiest way to accomplish this is using [NuGet](https://www.nuget.org/). The NuGet package to look for is [Zermelo.API](https://www.nuget.org/packages/Zermelo.API). Once the package is added (or you have referenced the dll otherwise), you can start using the Zermelo API.
 
-To connect to the Zermelo API, you'll need to authenticate yourself first. The result will be an [`Authentication`]({{type-link:Zermelo.API.Authentication}}) object, which can be used to make further requests:
+To connect to the Zermelo API, you'll first need to authenticate yourself. The result will be an [`Authentication`]({{type-link:Zermelo.API.Authentication}}) object, which can be used to make further requests:
 
 ```
 ZermeloAuthenticator authenticator = new ZermeloAuthenticator(); 
@@ -19,7 +19,7 @@ ZermeloConnection connection = new ZermeloConnection(auth);
 
 ```
 IEnumerable<Appointment> appointments = 
-    connection.Appointments.GetByDateAsync(
+    await connection.Appointments.GetByDateAsync(
         new DateTimeOffset(2016, 9, 1, 0, 0, 0, new TimeSpan(2, 0, 0)),
         // September 1st midnight, Central European Summer Time
         new DateTimeOffset(2016, 9, 2, 0, 0, 0, new TimeSpan(2, 0, 0))
