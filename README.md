@@ -20,6 +20,3 @@ Currently this library supports version 2 of the API.
 
 ### How much of the API is supported?
 This library supports (as far as I know) every part of the API that can be accessed when authenticated by an authorization code. This means you can access the Announcements, Appointments and Users endpoints. When using the library you'll also see an Authentication endpoint, but this is not directly linked to an endpoint over at the Zermelo API.
-
-### Why are GitHub issues disabled?
-This project has been a private project for quite some time. All this time I used [Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) to host my code and work items (the VSTS version of issues, but way better), and VSTS is a pretty great (understatement) service, so I didn't want to give up all the things of VSTS in favor of open source. Currently the code is synced between VSTS and GitHub, so I can enjoy using VSTS and you can enjoy the code too, but as the issues workflow of VSTS and GitHub is very different, I haven't found a way to sync it yet. This might change in the future (the VSTS team is working hard on customization options for the work items workflow), but untill then the GitHub issues will remain disabled.
