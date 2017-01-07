@@ -1,0 +1,30 @@
+To use the Zermelo.API library, you'll need to reference it in your project. The easiest way to accomplish this is using [NuGet](https://www.nuget.org/). The NuGet package to look for is [Zermelo.API](https://www.nuget.org/packages/Zermelo.API). Once the package is added (or you have referenced the dll otherwise), you can start using the Zermelo API.
+
+To connect to the Zermelo API, you'll first need to authenticate yourself. The result will be an [`Authentication`]({{type-link:Zermelo.API.Authentication}}) object, which can be used to make further requests:
+
+```
+ZermeloAuthenticator authenticator = new ZermeloAuthenticator(); 
+Authentication auth = await authenticator.GetAuthenticationAsync("school", "123456789123");
+```
+
+The `GetAuthenticationAsync` method accepts to arguments: an host and a code. The host is part of the url for the online Zermelo Portal: for a Zermelo Portal hosted on the https://school.zportal.nl domain, 'school' is the host. The code is a personal authentication code, which can be acquired by logging in to the Zermelo Portal and going to 'Koppelingen' > 'Koppel App'.
+
+The [`Authentication`]({{type-link:Zermelo.API.Authentication}}) object can now be used to create a [`ZermeloConnection`]({{type-link:Zermelo.API.ZermeloConnection}}) object, which can then be used to retrieve data from the Zermelo API:
+
+```
+ZermeloConnection connection = new ZermeloConnection(auth);
+```
+
+[`ZermeloConnection`]({{type-link:Zermelo.API.ZermeloConnection}}) has different properties which correspond to different endpoints of the API. To get the current schedule for example, you can use the `Appointments` property which is of the type [`AppointmentsEndpoint`]({{type-link:Zermelo.API.Endpoints.AppointmentsEndpoint}}). This type has methods to get a list of [`Appointments`]({{type-link:Zermelo.API.Models.Appointment}}) using different queries. For example, you can get all [`Appointments`]({{type-link:Zermelo.API.Models.Appointment}}) for a day:
+
+```
+IEnumerable<Appointment> appointments = 
+    await connection.Appointments.GetByDateAsync(
+        new DateTimeOffset(2016, 9, 1, 0, 0, 0, new TimeSpan(2, 0, 0)),
+        // September 1st midnight, Central European Summer Time
+        new DateTimeOffset(2016, 9, 2, 0, 0, 0, new TimeSpan(2, 0, 0))
+        // September 2nd midnight, Central European Summer Time
+    );
+```
+
+This will get you a list of [`Appointments`]({{type-link:Zermelo.API.Models.Appointment}}) for September 1st. For more ways to retrieve data from the Zermelo API, please check out [the documentation for `ZermeloConnection`]({{type-link:Zermelo.API.ZermeloConnection}}).
