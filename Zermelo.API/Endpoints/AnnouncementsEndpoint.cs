@@ -35,6 +35,24 @@ namespace Zermelo.API.Endpoints
         }
 
         /// <summary>
+        /// Get all announcements that should be displayed at the current time.
+        /// </summary>
+        /// <param name="fields">
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
+        /// An empty list will also result in the defaults.
+        /// </param>
+        /// <returns>The current announcements.</returns>
+        public async Task<IEnumerable<Announcement>> GetCurrentAsync(List<string> fields = null)
+        {
+            Dictionary<string, string> urlOptions = new Dictionary<string, string>
+            {
+                { "current", "true" }
+            };
+
+            return await GetByCustomUrlOptionsAsync(urlOptions, fields);
+        }
+
+        /// <summary>
         /// Get all announcements between the specified start and end points.
         /// </summary>
         /// <param name="start">The date from which to get announcements.</param>
