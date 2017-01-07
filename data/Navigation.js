@@ -3,9 +3,22 @@
 var sharpDox = sharpDox || {};
 
 sharpDox.navigationData = [
-			
+							
+				
+
+{
+	id: 'getting-started',
+	text: 'Getting started',
+		icon: 'icon-file-text',
+	a_attr: { href : '#/article/getting-started' },
+		children: [
+			]
+},
+
+
+					
 				{
-					id: '2f85f025-21c1-46ec-b36c-bf58cf7fee20',
+					id: 'bafdd7b7-8ed5-4ff1-a683-9fd0cfec0563',
 					text: 'Zermelo.API',
 					icon: 'icon-folder-close',
 					children: [
