@@ -15,15 +15,9 @@ namespace Zermelo.API.Services
         public IEnumerable<T> DeserializeCollection<T>(string json)
         {
             JObject jsonResult = JObject.Parse(json);
-            IEnumerable<JToken> jsonResults = jsonResult["response"]["data"].Children();
 
-            List<T> collection = new List<T>();
-            foreach (JToken t in jsonResults)
-            {
-                collection.Add(JsonConvert.DeserializeObject<T>(t.ToString()));
-            }
-
-            return collection;
+            return jsonResult["response"]["data"].Children()
+                .Select(token => JsonConvert.DeserializeObject<T>(token.ToString()));
         }
 
         public T GetValue<T>(string json, string key)
