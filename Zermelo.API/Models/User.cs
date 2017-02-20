@@ -54,10 +54,22 @@ namespace Zermelo.API.Models
         {
             get
             {
-                if (String.IsNullOrWhiteSpace(Prefix))
-                    return $"{FirstName} {LastName}";
+                if (String.IsNullOrWhiteSpace(LastName))
+                    if (String.IsNullOrWhiteSpace(FirstName))
+                        return null;
+                    else
+                        return FirstName;
                 else
-                    return $"{FirstName} {Prefix} {LastName}";
+                    if (String.IsNullOrWhiteSpace(Prefix))
+                        if (String.IsNullOrWhiteSpace(FirstName))
+                            return LastName;
+                        else
+                            return $"{FirstName} {LastName}";
+                    else
+                        if (String.IsNullOrWhiteSpace(FirstName))
+                            return $"{Prefix} {LastName}";
+                        else
+                            return $"{FirstName} {Prefix} {LastName}";
             }
         }
     }

@@ -68,6 +68,7 @@
     <Compile Include="Helpers\UnixTimeHelpersTests.cs" />
     <Compile Include="Helpers\UnixTimeToDateTimeOffsetJsonConverterTests.cs" />
     <Compile Include="Models\AppointmentTests.cs" />
+    <Compile Include="Models\UserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HttpServiceTests.cs" />
     <Compile Include="Services\UrlBuilderTests.cs" />
