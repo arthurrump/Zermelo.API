@@ -46,7 +46,7 @@ namespace Zermelo.API.Endpoints
         {
             Dictionary<string, string> urlOptions = new Dictionary<string, string>
             {
-                { "user", user },
+                { "user", user.ToLowerInvariant() },
                 { "current", "true" }
             };
 
@@ -73,7 +73,7 @@ namespace Zermelo.API.Endpoints
 
             Dictionary<string, string> urlOptions = new Dictionary<string, string>
             {
-                { "user", user },
+                { "user", user.ToLowerInvariant() },
                 { "start", UnixTimeHelpers.ToUnixTimeSeconds(start.ToUniversalTime()).ToString() },
                 { "end", UnixTimeHelpers.ToUnixTimeSeconds(end.ToUniversalTime()).ToString() }
             };
@@ -117,7 +117,7 @@ namespace Zermelo.API.Endpoints
         {
             Dictionary<string, string> urlOptions = new Dictionary<string, string>
             {
-                { "user", user }
+                { "user", user.ToLowerInvariant() }
             };
 
             return await GetByCustomUrlOptionsAsync(urlOptions, fields);

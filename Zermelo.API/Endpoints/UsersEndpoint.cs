@@ -54,7 +54,7 @@ namespace Zermelo.API.Endpoints
         /// <returns>The requested user or, if the user's not found, <c>null</c>.</returns>
         public async Task<User> GetByCodeAsync(string code, List<string> fields = null)
         {
-            IEnumerable<User> result = await GetByCustomUrlOptionsAsync<User>($"{_endpoint}/{code}", null, fields);
+            IEnumerable<User> result = await GetByCustomUrlOptionsAsync<User>($"{_endpoint}/{code.ToLowerInvariant()}", null, fields);
 
             if (result.Count() < 1)
                 return null;

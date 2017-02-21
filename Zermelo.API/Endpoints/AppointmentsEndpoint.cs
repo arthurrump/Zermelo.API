@@ -50,7 +50,7 @@ namespace Zermelo.API.Endpoints
 
             Dictionary<string, string> urlOptions = new Dictionary<string, string>
             {
-                { "user", user },
+                { "user", user.ToLowerInvariant() },
                 { "start", UnixTimeHelpers.ToUnixTimeSeconds(start.ToUniversalTime()).ToString() },
                 { "end", UnixTimeHelpers.ToUnixTimeSeconds(end.ToUniversalTime()).ToString() }
             };
