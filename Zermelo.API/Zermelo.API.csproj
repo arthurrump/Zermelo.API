@@ -1,81 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{06A3B817-06DA-499A-BD8E-E4C4DA8E3EA7}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Zermelo.API</RootNamespace>
-    <AssemblyName>Zermelo.API</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFramework>netstandard1.1</TargetFramework>
+    <Authors>Arthur Rump</Authors>
+    <PackageLicenseUrl>https://github.com/arthurrump/Zermelo.API/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://arthurrump.github.io/Zermelo.API</PackageProjectUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/arthurrump/Zermelo.API</RepositoryUrl>
+    <Description>Connect to Zermelo from your .NET app. This is a third party library, we're not affiliated with Zermelo Software BV.</Description>
+    <Company />
+    <Version>3.0.0</Version>
+    <Copyright>Copyright 2017 Arthur Rump</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>zermelo school schedule</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/arthurrump/Zermelo.API/master/logo/nuget_logo.png</PackageIconUrl>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="Authentication.cs" />
-    <Compile Include="Endpoints\AnnouncementsEndpoint.cs" />
-    <Compile Include="Endpoints\AppointmentsEndpoint.cs" />
-    <Compile Include="Endpoints\AuthenticationEndpoint.cs" />
-    <Compile Include="Endpoints\EndpointBase.cs" />
-    <Compile Include="Endpoints\UsersEndpoint.cs" />
-    <Compile Include="Exceptions\ZermeloHttpException.cs" />
-    <Compile Include="Factories\AuthenticationFactory.cs" />
-    <Compile Include="Helpers\DependencyHelper.cs" />
-    <Compile Include="Helpers\ListExtensions.cs" />
-    <Compile Include="Helpers\StringExtensions.cs" />
-    <Compile Include="Helpers\UnixTimeHelpers.cs" />
-    <Compile Include="Helpers\UnixTimeToDateTimeOffsetJsonConverter.cs" />
-    <Compile Include="Interfaces\IAuthentication.cs" />
-    <Compile Include="Models\Announcement.cs" />
-    <Compile Include="Models\Appointment.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\HttpService.cs" />
-    <Compile Include="Services\Interfaces\IHttpService.cs" />
-    <Compile Include="Services\Interfaces\IJsonService.cs" />
-    <Compile Include="Services\Interfaces\IUrlBuilder.cs" />
-    <Compile Include="Services\UrlBuilder.cs" />
-    <Compile Include="Services\JsonService.cs" />
-    <Compile Include="ZermeloAuthenticator.cs" />
-    <Compile Include="ZermeloConnection.cs" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
