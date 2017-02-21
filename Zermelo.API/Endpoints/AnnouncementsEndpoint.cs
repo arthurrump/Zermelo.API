@@ -42,10 +42,11 @@ namespace Zermelo.API.Endpoints
         /// An empty list will also result in the defaults.
         /// </param>
         /// <returns>The current announcements.</returns>
-        public async Task<IEnumerable<Announcement>> GetCurrentAsync(List<string> fields = null)
+        public async Task<IEnumerable<Announcement>> GetCurrentAsync(string user = "~me", List<string> fields = null)
         {
             Dictionary<string, string> urlOptions = new Dictionary<string, string>
             {
+                { "user", user },
                 { "current", "true" }
             };
 
@@ -112,9 +113,14 @@ namespace Zermelo.API.Endpoints
         /// An empty list will also result in the defaults.
         /// </param>
         /// <returns>A list of all announcements.</returns>
-        public async Task<IEnumerable<Announcement>> GetAllAsync(List<string> fields = null)
+        public async Task<IEnumerable<Announcement>> GetAllAsync(string user = "~me", List<string> fields = null)
         {
-            return await GetByCustomUrlOptionsAsync(null, fields);
+            Dictionary<string, string> urlOptions = new Dictionary<string, string>
+            {
+                { "user", user }
+            };
+
+            return await GetByCustomUrlOptionsAsync(urlOptions, fields);
         }
 
         /// <summary>
