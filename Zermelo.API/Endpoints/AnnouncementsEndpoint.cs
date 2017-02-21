@@ -70,27 +70,14 @@ namespace Zermelo.API.Endpoints
                     $"The value of the {nameof(end)} parameter should be later in time " +
                     $"than the value of the {nameof(start)} parameter (value: {start.ToString()}).");
 
-            // This shouldn't be needed, but the Zermelo API thinks a bit strange about which announcements to return...
-            if (_cache == null || DateTimeOffset.UtcNow.Subtract(_cacheMoment.ToUniversalTime()) > new TimeSpan(0, 15, 0) ||
-                fields != _cacheFields)
+            Dictionary<string, string> urlOptions = new Dictionary<string, string>
             {
-                _cache = await GetAllAsync(fields);
-                _cacheFields = fields;
-                _cacheMoment = DateTimeOffset.UtcNow;
-            }
+                { "user", user },
+                { "start", UnixTimeHelpers.ToUnixTimeSeconds(start.ToUniversalTime()).ToString() },
+                { "end", UnixTimeHelpers.ToUnixTimeSeconds(end.ToUniversalTime()).ToString() }
+            };
 
-            List<Announcement> result = new List<Announcement>();
-            foreach (Announcement a in _cache)
-            {
-                if ((a.Start > start && a.Start < end) ||
-                    (a.End > start && a.End < end) ||
-                    (a.Start < start && a.End > end))
-                {
-                    result.Add(a);
-                }
-            }
-
-            return result;
+            return await GetByCustomUrlOptionsAsync(urlOptions, fields);
         }
 
         /// <summary>
