@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.1</TargetFramework>
     <Authors>Arthur Rump</Authors>
-    <PackageLicenseUrl>https://github.com/arthurrump/Zermelo.API/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/arthurrump/Zermelo.API/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://arthurrump.github.io/Zermelo.API</PackageProjectUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/arthurrump/Zermelo.API</RepositoryUrl>
