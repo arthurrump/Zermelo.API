@@ -24,10 +24,6 @@ namespace Zermelo.API.Endpoints
     {
         private const string _endpoint = "announcements";
 
-        private IEnumerable<Announcement> _cache = null;
-        private DateTimeOffset _cacheMoment = new DateTimeOffset();
-        private List<string> _cacheFields = null;
-
         internal AnnouncementsEndpoint(IAuthentication auth, IUrlBuilder urlBuilder, IHttpService httpService, IJsonService jsonService)
             : base(auth, urlBuilder, httpService, jsonService)
         {
