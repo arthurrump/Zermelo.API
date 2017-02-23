@@ -15,7 +15,7 @@ namespace Zermelo.API.Tests.Services
         public static void ShouldBuildCorrectUrl()
         {
             UrlBuilder sut = new UrlBuilder();
-            string expected = "https://host.zportal.nl/api/v2/announcements";
+            string expected = "https://host.zportal.nl/api/v3/announcements";
 
             string result = sut.GetUrl("host", "announcements");
 
@@ -26,7 +26,7 @@ namespace Zermelo.API.Tests.Services
         public static void ShouldBuildCorrectUrlWithOptions()
         {
             UrlBuilder sut = new UrlBuilder();
-            string expected = "https://host.zportal.nl/api/v2/announcements?user=~me&start=startDate&end=endDate";
+            string expected = "https://host.zportal.nl/api/v3/announcements?user=~me&start=startDate&end=endDate";
 
             string result = sut.GetUrl("host", "announcements",
                 new Dictionary<string, string>
@@ -43,7 +43,7 @@ namespace Zermelo.API.Tests.Services
         public static void ShouldBuildCorrectAuthenticatedUrl()
         {
             UrlBuilder sut = new UrlBuilder();
-            string expected = "https://host.zportal.nl/api/v2/announcements?access_token=token";
+            string expected = "https://host.zportal.nl/api/v3/announcements?access_token=token";
 
             string result = sut.GetAuthenticatedUrl(new TestAuthentication { Host = "host", Token = "token" }, "announcements");
 
@@ -54,7 +54,7 @@ namespace Zermelo.API.Tests.Services
         public static void ShouldBuildCorrectAuthenticatedUrlWithOptions()
         {
             UrlBuilder sut = new UrlBuilder();
-            string expected = "https://host.zportal.nl/api/v2/announcements?user=~me&start=startDate&end=endDate&access_token=token";
+            string expected = "https://host.zportal.nl/api/v3/announcements?user=~me&start=startDate&end=endDate&access_token=token";
 
             string result = sut.GetAuthenticatedUrl(new TestAuthentication { Host = "host", Token = "token" },
                 "announcements",
