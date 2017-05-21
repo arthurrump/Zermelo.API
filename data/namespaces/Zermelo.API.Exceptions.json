@@ -1,1 +1,0 @@
-{"Portable Class Libraries":{"name":"Zermelo.API.Exceptions","assembly":"Zermelo.API","description":"","types":[{"id":"Zermelo.API.Exceptions.ZermeloHttpException","kind":"class","accessibility":"public","name":"ZermeloHttpException","summary":"<p>This exception gets thrown if the statuscode of an HTTP request does not indicate success.</p>"}]}}
