@@ -16,4 +16,6 @@ Copy-Item README.md docs\default.sdpd
 
 C:\tools\sharpdox\sharpdox\SharpDox.Console.exe -Config $sdoxPath
 
+Compress-Archive .\docs\build\Html\default\* .\docs\build\docs.zip -Force
+
 Remove-Item docs\build\Html\default\start.exe
