@@ -2,12 +2,18 @@
 
 Disclaimer: this project is created by a third party and not associated with Zermelo Software BV.
 
+| Build status          | |
+|-----------------------|-|
+| master | [![Build status](https://ci.appveyor.com/api/projects/status/h4l0t4ch01pgtr33/branch/master?svg=true)](https://ci.appveyor.com/project/arthurrump/zermelo-api/branch/master) |
+| dev | [![Build status](https://ci.appveyor.com/api/projects/status/h4l0t4ch01pgtr33/branch/dev?svg=true)](https://ci.appveyor.com/project/arthurrump/zermelo-api/branch/dev) |
+
 Zermelo.API is a PCL (Portable Class Library, a Library of Classes that is Portable (can be used on multiple platforms)) that provides a .NET API to connect to the Zermelo API. The Zermelo API is an API created by Zermelo Software that allows third parties to integrate with their scheduling software that's used by many Dutch schools. This PCL abstracts the Zermelo API into easy to use methods and classes that can be used by a .NET application.
 
 ## Links
 - [NuGet](https://www.nuget.org/packages/Zermelo.API)
 - [Documentation](http://api.zermelo.arthurrump.com)
 - [Source on GitHub](https://github.com/arthurrump/Zermelo.API)
+- [CI builds on AppVeyor](https://ci.appveyor.com/project/arthurrump/zermelo-api)
 
 ## Projects using this library
 - Schoolrooster voor Zermelo ([GitHub](https://github.com/arthurrump/Zermelo.App.UWP), [Website](http://zermelo.arthurrump.com))
