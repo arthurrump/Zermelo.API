@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Zermelo.API.Exceptions;
 using Zermelo.API.Interfaces;
+using Zermelo.API.Models;
 using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API.Endpoints
@@ -52,6 +53,12 @@ namespace Zermelo.API.Endpoints
                 throw new ZermeloHttpException(httpResponse);
 
             return true;
+        }
+
+        public async Task<Token> GetCurrentToken()
+        {
+            IEnumerable<Token> tokens = await GetByCustomUrlOptionsAsync<Token>("tokens/~current", new Dictionary<string, string>());
+            return tokens.Single();
         }
     }
 }
