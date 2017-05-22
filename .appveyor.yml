@@ -1,0 +1,41 @@
+version: 3.0.{build}
+image: Visual Studio 2017
+init:
+- ps: dotnet --info
+environment:
+  GITHUB_TOKEN:
+    secure: 7TecrVW4enXl/g+ksdEKkUdax9HYyPb+yP+E74haE92pwjDtXB5QT9khwbQinC1T
+install:
+- ps: .\scripts\install-sharpdox.ps1
+cache: C:\tools\
+build_script:
+- ps: .\scripts\patch-version.ps1
+- ps: dotnet restore
+- ps: dotnet build -c Release
+- ps: .\scripts\build-docs.ps1
+test_script:
+- ps: dotnet test .\Zermelo.API.Tests\Zermelo.API.Tests.csproj --no-build -c Release
+artifacts:
+- path: '**\Zermelo.API.*.nupkg'
+  name: nupkg
+- path: .\Zermelo.API\bin\Release\**\Zermelo.API.dll
+  name: dll
+- path: .\docs\build\docs.zip
+  name: docs
+deploy:
+- provider: NuGet
+  api_key:
+    secure: 9+WOr6sGkJT4ltYLPgIRNCambkznLpX/JocQG004a0nZVacqmy3268EFgvnmFWlo
+  skip_symbols: true
+  artifact: nupkg
+  on:
+    branch: master
+- provider: GitHub
+  tag: v$(appveyor_build_version)
+  auth_token:
+    secure: LvgYo8wrp1PNQN43IUQSgUAoKDLFJ1CS9GNh7b4TGZlv2ZgYoNW/4P2jjpU/Pyu+
+  artifact: dll
+  on:
+    branch: master
+after_deploy:
+- ps: if ($Env:APPVEYOR_REPO_BRANCH -eq 'master') { .\scripts\publish-docs.ps1 }
