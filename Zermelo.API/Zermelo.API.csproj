@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.1</TargetFramework>
     <Authors>Arthur Rump</Authors>
     <PackageLicenseUrl>https://github.com/arthurrump/Zermelo.API/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://arthurrump.github.io/Zermelo.API</PackageProjectUrl>
+    <PackageProjectUrl>http://api.zermelo.arthurrump.com</PackageProjectUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/arthurrump/Zermelo.API</RepositoryUrl>
     <Description>Connect to Zermelo from your .NET app. This is a third party library, we're not affiliated with Zermelo Software BV.</Description>
