@@ -24,7 +24,7 @@ namespace Zermelo.API.Tests.Endpoints
             DateTimeOffset start = end.AddDays(7);
 
             ArgumentOutOfRangeException ex = await Assert.ThrowsAsync<ArgumentOutOfRangeException>(() => 
-                sut.GetByDateAsync(start, end));
+                sut.GetByDateForUserAsync(start, end));
 
             Assert.Equal("end", ex.ParamName);
         }

@@ -31,7 +31,7 @@ namespace Zermelo.API.Endpoints
         }
 
         /// <summary>
-        /// Get all appointments that start between the specified start and end points.
+        /// Get all appointments for a user that start between the specified start and end points.
         /// </summary>
         /// <param name="start">The date from which to get appointments.</param>
         /// <param name="end">The date until which to get appointments.</param>
@@ -41,7 +41,7 @@ namespace Zermelo.API.Endpoints
         /// An empty list will also result in the defaults.
         /// </param>
         /// <returns>List of appointments.</returns>
-        public async Task<IEnumerable<Appointment>> GetByDateAsync(DateTimeOffset start, DateTimeOffset end, string user = "~me", List<string> fields = null)
+        public async Task<IEnumerable<Appointment>> GetByDateForUserAsync(DateTimeOffset start, DateTimeOffset end, string user = "~me", List<string> fields = null)
         {
             if (start >= end)
                 throw new ArgumentOutOfRangeException(nameof(end), end,
@@ -51,6 +51,62 @@ namespace Zermelo.API.Endpoints
             Dictionary<string, string> urlOptions = new Dictionary<string, string>
             {
                 { "user", user.ToLowerInvariant() },
+                { "start", UnixTimeHelpers.ToUnixTimeSeconds(start.ToUniversalTime()).ToString() },
+                { "end", UnixTimeHelpers.ToUnixTimeSeconds(end.ToUniversalTime()).ToString() }
+            };
+
+            return await GetByCustomUrlOptionsAsync(urlOptions, fields);
+        }
+
+        /// <summary>
+        /// Get all appointments for a location that start between the specified start and end points.
+        /// </summary>
+        /// <param name="start">The date from which to get appointments.</param>
+        /// <param name="end">The date until which to get appointments.</param>
+        /// <param name="locationId">The id of the location (classroom) to get appointments for. Note that this is different from the name of the location!</param>
+        /// <param name="fields">
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
+        /// An empty list will also result in the defaults.
+        /// </param>
+        /// <returns>List of appointments.</returns>
+        public async Task<IEnumerable<Appointment>> GetByDateForLocationAsync(DateTimeOffset start, DateTimeOffset end, int locationId, List<string> fields = null)
+        {
+            if (start >= end)
+                throw new ArgumentOutOfRangeException(nameof(end), end,
+                    $"The value of the {nameof(end)} parameter should be later in time " +
+                    $"than the value of the {nameof(start)} parameter (value: {start.ToString()}).");
+
+            Dictionary<string, string> urlOptions = new Dictionary<string, string>
+            {
+                { "locationsOfBranch", locationId.ToString() },
+                { "start", UnixTimeHelpers.ToUnixTimeSeconds(start.ToUniversalTime()).ToString() },
+                { "end", UnixTimeHelpers.ToUnixTimeSeconds(end.ToUniversalTime()).ToString() }
+            };
+
+            return await GetByCustomUrlOptionsAsync(urlOptions, fields);
+        }
+
+        /// <summary>
+        /// Get all appointments for a group that start between the specified start and end points.
+        /// </summary>
+        /// <param name="start">The date from which to get appointments.</param>
+        /// <param name="end">The date until which to get appointments.</param>
+        /// <param name="groupId">The id of the group to get appointments for. Note that this is different from the name of the group!</param>
+        /// <param name="fields">
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
+        /// An empty list will also result in the defaults.
+        /// </param>
+        /// <returns>List of appointments.</returns>
+        public async Task<IEnumerable<Appointment>> GetByDateForGroupAsync(DateTimeOffset start, DateTimeOffset end, int groupId, List<string> fields = null)
+        {
+            if (start >= end)
+                throw new ArgumentOutOfRangeException(nameof(end), end,
+                    $"The value of the {nameof(end)} parameter should be later in time " +
+                    $"than the value of the {nameof(start)} parameter (value: {start.ToString()}).");
+
+            Dictionary<string, string> urlOptions = new Dictionary<string, string>
+            {
+                { "containsStudentsFromGroupInDepartment", groupId.ToString() },
                 { "start", UnixTimeHelpers.ToUnixTimeSeconds(start.ToUniversalTime()).ToString() },
                 { "end", UnixTimeHelpers.ToUnixTimeSeconds(end.ToUniversalTime()).ToString() }
             };
