@@ -78,7 +78,7 @@ namespace Zermelo.API.Endpoints
         }
 
         /// <summary>
-        /// Get a specific <see cref="Announcement"/> by it's id.
+        /// Get a specific <see cref="Announcement"/> by its id.
         /// </summary>
         /// <param name="id">The id of the announcement to get.</param>
         /// <param name="fields">

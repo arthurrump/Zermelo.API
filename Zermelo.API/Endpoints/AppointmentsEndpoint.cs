@@ -115,7 +115,7 @@ namespace Zermelo.API.Endpoints
         }
 
         /// <summary>
-        /// Get a specific <see cref="Appointment"/> by it's Id.
+        /// Get a specific <see cref="Appointment"/> by its Id.
         /// </summary>
         /// <param name="id">The <see cref="Appointment.Id"/> of the appointment to get.</param>
         /// <param name="fields">
@@ -139,7 +139,7 @@ namespace Zermelo.API.Endpoints
         }
 
         /// <summary>
-        /// Get all versions of an appointment instance by it's <see cref="Appointment.InstanceId"/>.
+        /// Get all versions of an appointment instance by its <see cref="Appointment.InstanceId"/>.
         /// </summary>
         /// <param name="instanceId">The <see cref="Appointment.InstanceId"/> of the appointment instance.</param>
         /// <param name="fields">
