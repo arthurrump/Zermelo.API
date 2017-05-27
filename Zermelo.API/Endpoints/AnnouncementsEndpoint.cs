@@ -34,11 +34,11 @@ namespace Zermelo.API.Endpoints
         /// Get all announcements that should be displayed at the current time.
         /// </summary>
         /// <param name="fields">
-        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
-        /// An empty list will also result in the defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, 
+        /// which will result in all fields listed in <see cref="Announcement.Fields"/>.
         /// </param>
         /// <returns>The current announcements.</returns>
-        public async Task<IEnumerable<Announcement>> GetCurrentAsync(string user = "~me", List<string> fields = null)
+        public async Task<IEnumerable<Announcement>> GetCurrentAsync(string user = "~me", IList<string> fields = null)
         {
             Dictionary<string, string> urlOptions = new Dictionary<string, string>
             {
@@ -56,11 +56,11 @@ namespace Zermelo.API.Endpoints
         /// <param name="end">The date until which to get announcements.</param>
         /// <param name="user">The user to get announcements for. Defaults to <c>"~me"</c> to get announcements for the current user.</param>
         /// <param name="fields">
-        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
-        /// An empty list will also result in the defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, 
+        /// which will result in all fields listed in <see cref="Announcement.Fields"/>.
         /// </param>
         /// <returns>List of <see cref="Announcement"/> objects.</returns>
-        public async Task<IEnumerable<Announcement>> GetByDateAsync(DateTimeOffset start, DateTimeOffset end, string user = "~me", List<string> fields = null)
+        public async Task<IEnumerable<Announcement>> GetByDateAsync(DateTimeOffset start, DateTimeOffset end, string user = "~me", IList<string> fields = null)
         {
             if (start <= end)
                 throw new ArgumentOutOfRangeException(nameof(end), end,
@@ -82,11 +82,11 @@ namespace Zermelo.API.Endpoints
         /// </summary>
         /// <param name="id">The id of the announcement to get.</param>
         /// <param name="fields">
-        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
-        /// An empty list will also result in the defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, 
+        /// which will result in all fields listed in <see cref="Announcement.Fields"/>.
         /// </param>
         /// <returns>The requested <see cref="Announcement"/>, or, if it's not found, <c>null</c>.</returns>
-        public async Task<Announcement> GetSingleByIdAsync(long id, List<string> fields = null)
+        public async Task<Announcement> GetSingleByIdAsync(long id, IList<string> fields = null)
         {
             Dictionary<string, string> urlOptions = new Dictionary<string, string>
             {
@@ -104,12 +104,12 @@ namespace Zermelo.API.Endpoints
         /// <summary>
         /// Get all announcements.
         /// </summary>
-        /// <param name="fields">
-        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
-        /// An empty list will also result in the defaults.
+        //// <param name="fields">
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, 
+        /// which will result in all fields listed in <see cref="Announcement.Fields"/>.
         /// </param>
         /// <returns>A list of all announcements.</returns>
-        public async Task<IEnumerable<Announcement>> GetAllAsync(string user = "~me", List<string> fields = null)
+        public async Task<IEnumerable<Announcement>> GetAllAsync(string user = "~me", IList<string> fields = null)
         {
             Dictionary<string, string> urlOptions = new Dictionary<string, string>
             {
@@ -124,13 +124,13 @@ namespace Zermelo.API.Endpoints
         /// </summary>
         /// <param name="urlOptions">The options you want to be in the url.</param>
         /// <param name="fields">
-        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
-        /// An empty list will also result in the defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, 
+        /// which will result in all fields listed in <see cref="Announcement.Fields"/>.
         /// </param>
         /// <returns>The requested announcements.</returns>
-        public async Task<IEnumerable<Announcement>> GetByCustomUrlOptionsAsync(Dictionary<string, string> urlOptions, List<string> fields = null)
+        public async Task<IEnumerable<Announcement>> GetByCustomUrlOptionsAsync(Dictionary<string, string> urlOptions, IList<string> fields = null)
         {
-            return await GetByCustomUrlOptionsAsync<Announcement>(_endpoint, urlOptions, fields);
+            return await GetByCustomUrlOptionsAsync<Announcement>(_endpoint, urlOptions, fields ?? Announcement.Fields);
         }
     }
 }

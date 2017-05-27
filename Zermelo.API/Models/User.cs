@@ -18,6 +18,14 @@ namespace Zermelo.API.Models
     public class User
     {
         /// <summary>
+        /// A list of all JSON keys implemented in this model that can be returned by the API. 
+        /// This is the list that will be passed to the API by default in the related methods, unless stated otherwise.
+        /// </summary>
+        public static IList<string> Fields => new string[] {
+            "code", "roles", "firstName", "prefix", "lastName"
+        };
+
+        /// <summary>
         /// The identifier for a user. Usually a student id or abbreviation. JSON Key: <c>code</c>
         /// </summary>
         [JsonProperty("code")]

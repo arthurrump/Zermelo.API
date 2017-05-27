@@ -55,9 +55,17 @@ namespace Zermelo.API.Endpoints
             return true;
         }
 
-        public async Task<Token> GetCurrentTokenAsync(List<string> fields = null)
+        /// <summary>
+        /// Get the token that's currently used for authentication.
+        /// </summary>
+        /// <param name="fields">
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, 
+        /// which will result in all fields listed in <see cref="Token.Fields"/>.
+        /// </param>
+        /// <returns>The current token.</returns>
+        public async Task<Token> GetCurrentTokenAsync(IList<string> fields = null)
         {
-            IEnumerable<Token> tokens = await GetByCustomUrlOptionsAsync<Token>("tokens/~current", new Dictionary<string, string>(), fields);
+            IEnumerable<Token> tokens = await GetByCustomUrlOptionsAsync<Token>("tokens/~current", null, fields ?? Token.Fields);
             return tokens.Single();
         }
     }

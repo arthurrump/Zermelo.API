@@ -12,6 +12,14 @@ namespace Zermelo.API.Models
     public class Location
     {
         /// <summary>
+        /// A list of all JSON keys implemented in this model that can be returned by the API. 
+        /// This is the list that will be passed to the API by default in the related methods, unless stated otherwise.
+        /// </summary>
+        public static IList<string> Fields => new string[] {
+            "id", "name", "parentteachernightCapacity", "courseCapacity", "branchOfSchool", "secondaryBranches"
+        };
+
+        /// <summary>
         /// The id of a location. JSON Key: <c>id</c>
         /// </summary>
         [JsonProperty("id")]

@@ -19,6 +19,16 @@ namespace Zermelo.API.Models
     public class Appointment
     {
         /// <summary>
+        /// A list of all JSON keys implemented in this model that can be returned by the API. 
+        /// This is the list that will be passed to the API by default in the related methods, unless stated otherwise.
+        /// </summary>
+        public static IList<string> Fields => new string[] {
+            "id", "appointmentInstance", "start", "end", "startTimeSlot", "endTimeSlot", "subjects", "type",
+            "remark", "locations", "teachers", "groups", "created", "lastModified", "valid", "hidden", "base",
+            "cancelled", "modified", "moved", "new", "changeDescription", "branchOfSchool", "branch"
+        };
+
+        /// <summary>
         /// The possible types of appointments.
         /// </summary>
         public enum AppointmentType

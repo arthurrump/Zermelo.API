@@ -12,9 +12,17 @@ namespace Zermelo.API.Models
     /// <remarks>
     /// Official documentation can be found [here](https://zermelo.atlassian.net/wiki/display/DEV/Token)
     /// </remarks>
-    /// <seealso cref="Endpoints.AuthenticationEndpoint.GetCurrentToken"/>
+    /// <seealso cref="Endpoints.AuthenticationEndpoint.GetCurrentTokenAsync"/>
     public class Token
     {
+        /// <summary>
+        /// A list of all JSON keys implemented in this model that can be returned by the API. 
+        /// This is the list that will be passed to the API by default in the related methods, unless stated otherwise.
+        /// </summary>
+        public static IList<string> Fields => new string[] {
+            "token", "user", "created", "expires", "timeout", "comment"
+        };
+
         /// <summary>
         /// The token string itself. JSON Key: <c>token</c>
         /// </summary>

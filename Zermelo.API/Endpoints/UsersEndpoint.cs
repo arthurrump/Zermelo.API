@@ -34,11 +34,11 @@ namespace Zermelo.API.Endpoints
         /// Get the current authenticated user.
         /// </summary>
         /// <param name="fields">
-        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
-        /// An empty list will also result in the defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, 
+        /// which will result in all fields listed in <see cref="User.Fields"/>.
         /// </param>
         /// <returns>The current authenticated user.</returns>
-        public async Task<User> GetCurrentUserAsync(List<string> fields = null)
+        public async Task<User> GetCurrentUserAsync(IList<string> fields = null)
         {
             return await GetByCodeAsync("~me", fields);
         }
@@ -46,15 +46,20 @@ namespace Zermelo.API.Endpoints
         /// <summary>
         /// Get a user by it's code (a student number or teacher abbreviation).
         /// </summary>
+        /// <remarks>
+        /// When authenticated via an authorization code (which is the only way that's currently supported), you're not allowed
+        /// to request the FirstName property of a teacher, resulting in a HTTP 403 error. You should use the <paramref name="fields"/>
+        /// parameter to list the properties you want to get. Getting the FirstName of students is allowed.
+        /// </remarks>
         /// <param name="code">The code (a student number or teacher abbreviation) of the user.</param>
         /// <param name="fields">
-        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
-        /// An empty list will also result in the defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, 
+        /// which will result in all fields listed in <see cref="User.Fields"/>.
         /// </param>
         /// <returns>The requested user or, if the user's not found, <c>null</c>.</returns>
-        public async Task<User> GetByCodeAsync(string code, List<string> fields = null)
+        public async Task<User> GetByCodeAsync(string code, IList<string> fields = null)
         {
-            IEnumerable<User> result = await GetByCustomUrlOptionsAsync<User>($"{_endpoint}/{code.ToLowerInvariant()}", null, fields);
+             IEnumerable<User> result = await GetByCustomUrlOptionsAsync<User>($"{_endpoint}/{code.ToLowerInvariant()}", null, fields ?? User.Fields);
 
             if (result.Count() < 1)
                 return null;
@@ -65,13 +70,23 @@ namespace Zermelo.API.Endpoints
         /// <summary>
         /// Get a list of all users.
         /// </summary>
+        /// <remarks>
+        /// When authenticated via an authorization code (which is the only way that's currently supported), you're not allowed
+        /// to request the FirstName property, resulting in a HTTP 403 error. By default this property is excluded from the request.
+        /// </remarks>
         /// <param name="fields">
-        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
-        /// An empty list will also result in the defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, 
+        /// which will result in all fields listed in <see cref="User.Fields"/>, except for <c>firstName</c>.
         /// </param>
         /// <returns>A list of all users.</returns>
-        public async Task<IEnumerable<User>> GetAllAsync(List<string> fields = null)
+        public async Task<IEnumerable<User>> GetAllAsync(IList<string> fields = null)
         {
+            if (fields == null)
+            {
+                fields = User.Fields.ToList();
+                fields.Remove("firstName");
+            }
+
             return await GetByCustomUrlOptionsAsync(null, fields);
         }
 
@@ -80,13 +95,13 @@ namespace Zermelo.API.Endpoints
         /// </summary>
         /// <param name="urlOptions">The options you want to be in the url.</param>
         /// <param name="fields">
-        /// The fields (as json keys) to get. Defaults to <c>null</c>, which results in the defaults of the Zermelo API.
-        /// An empty list will also result in the defaults.
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, 
+        /// which will result in all fields listed in <see cref="User.Fields"/>.
         /// </param>
         /// <returns>The requested users.</returns>
-        public async Task<IEnumerable<User>> GetByCustomUrlOptionsAsync(Dictionary<string, string> urlOptions, List<string> fields = null)
+        public async Task<IEnumerable<User>> GetByCustomUrlOptionsAsync(Dictionary<string, string> urlOptions, IList<string> fields = null)
         {
-            return await GetByCustomUrlOptionsAsync<User>(_endpoint, urlOptions, fields);
+            return await GetByCustomUrlOptionsAsync<User>(_endpoint, urlOptions, fields ?? User.Fields);
         }
     }
 }

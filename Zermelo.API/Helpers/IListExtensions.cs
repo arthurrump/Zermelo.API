@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Zermelo.API.Helpers
 {
-    internal static class ListExtensions
+    internal static class IListExtensions
     {
-        public static string ToCommaSeperatedString<T>(this List<T> list)
+        public static string ToCommaSeperatedString<T>(this IList<T> list)
         {
             string s = "";
 
