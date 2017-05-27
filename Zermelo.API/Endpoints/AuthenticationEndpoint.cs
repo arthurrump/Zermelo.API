@@ -55,9 +55,9 @@ namespace Zermelo.API.Endpoints
             return true;
         }
 
-        public async Task<Token> GetCurrentToken()
+        public async Task<Token> GetCurrentTokenAsync(List<string> fields = null)
         {
-            IEnumerable<Token> tokens = await GetByCustomUrlOptionsAsync<Token>("tokens/~current", new Dictionary<string, string>());
+            IEnumerable<Token> tokens = await GetByCustomUrlOptionsAsync<Token>("tokens/~current", new Dictionary<string, string>(), fields);
             return tokens.Single();
         }
     }
