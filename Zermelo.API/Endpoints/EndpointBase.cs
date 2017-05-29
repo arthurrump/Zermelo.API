@@ -26,7 +26,7 @@ namespace Zermelo.API.Endpoints
         }
 
         protected async Task<IEnumerable<T>> GetByCustomUrlOptionsAsync<T>(string endpoint, 
-            Dictionary<string, string> urlOptions, List<string> fields = null)
+            Dictionary<string, string> urlOptions, IList<string> fields = null)
         {
             if (fields != null && fields.Any())
             {

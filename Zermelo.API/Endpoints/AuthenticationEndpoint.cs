@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Zermelo.API.Exceptions;
 using Zermelo.API.Interfaces;
+using Zermelo.API.Models;
 using Zermelo.API.Services.Interfaces;
 
 namespace Zermelo.API.Endpoints
@@ -52,6 +53,20 @@ namespace Zermelo.API.Endpoints
                 throw new ZermeloHttpException(httpResponse);
 
             return true;
+        }
+
+        /// <summary>
+        /// Get the token that's currently used for authentication.
+        /// </summary>
+        /// <param name="fields">
+        /// The fields (as json keys) to get. Defaults to <c>null</c>, 
+        /// which will result in all fields listed in <see cref="Token.Fields"/>.
+        /// </param>
+        /// <returns>The current token.</returns>
+        public async Task<Token> GetCurrentTokenAsync(IList<string> fields = null)
+        {
+            IEnumerable<Token> tokens = await GetByCustomUrlOptionsAsync<Token>("tokens/~current", null, fields ?? Token.Fields);
+            return tokens.Single();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Zermelo.API.Services
     {
         const string _https = "https://";
         const string _baseUrl = "zportal.nl/api";
-        const string _apiVersion = "v2";
+        const string _apiVersion = "v3";
         const string _accessToken = "access_token";
 
         public string GetAuthenticatedUrl(IAuthentication auth, string endpoint, Dictionary<string, string> options = null)

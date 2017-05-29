@@ -19,7 +19,7 @@ ZermeloConnection connection = new ZermeloConnection(auth);
 
 ```
 IEnumerable<Appointment> appointments = 
-    await connection.Appointments.GetByDateAsync(
+    await connection.Appointments.GetByDateForUserAsync(
         new DateTimeOffset(2016, 9, 1, 0, 0, 0, new TimeSpan(2, 0, 0)),
         // September 1st midnight, Central European Summer Time
         new DateTimeOffset(2016, 9, 2, 0, 0, 0, new TimeSpan(2, 0, 0))
