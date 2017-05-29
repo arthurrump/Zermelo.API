@@ -3,7 +3,7 @@
   <section guid="feacbce2-8290-4d90-bb05-373b9d7dbbfc">
     <item key="ConfigFileName" value="zermelo" />
     <item key="ProjectName" value="Zermelo.API" />
-    <item key="ProjectUrl" value="http://api.zermelo.arthurrump.com" />
+    <item key="ProjectUrl" value="http://zermelo.api.arthurrump.com" />
     <item key="Author" value="Arthur Rump" />
     <item key="AuthorUrl" value="https://www.arthurrump.com" />
     <item key="VersionNumber" value="<!--VersionNumber-->" />
