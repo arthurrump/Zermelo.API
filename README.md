@@ -1,6 +1,8 @@
 # Zermelo.API - Connect to Zermelo from your .NET app
 
-Disclaimer: this project is created by a third party and not associated with Zermelo Software BV.
+*Note: this project is created by a third party and not affiliated with Zermelo Software B.V. in any way.*
+
+![Zermelo.API](/logo/logo.png)
 
 <table style="width: auto">
 <thead>
@@ -21,7 +23,7 @@ Disclaimer: this project is created by a third party and not associated with Zer
 </tbody>
 </table>
 
-Zermelo.API is a PCL (Portable Class Library, a Library of Classes that is Portable (can be used on multiple platforms)) that provides a .NET API to connect to the Zermelo API. The Zermelo API is an API created by Zermelo Software that allows third parties to integrate with their scheduling software that's used by many Dutch schools. This PCL abstracts the Zermelo API into easy to use methods and classes that can be used by a .NET application.
+Zermelo.API is a .NET library for easier interaction with the Zermelo REST API, which gives access to scheduling information of the many Dutch schools that use Zermelo software to create their schedules. This library can be used on every .NET platform supporting .NET Standard 1.1 and up, so it runs on .NET Core 1+, .NET Framework 4.5+, Mono 4.6+, Xamarin, UWP and many more.
 
 ## Links
 - [NuGet](https://www.nuget.org/packages/Zermelo.API)
@@ -36,7 +38,7 @@ Have you created a very cool project, that should absolutely be listed here? Jus
 
 ## FAQ
 ### What version of the API is supported?
-Currently this library supports version 2 of the API.
+Currently this library supports version 3 of the API.
 
 ### How much of the API is supported?
-This library supports (as far as I know) every part of the API that can be accessed when authenticated by an authorization code. This means you can access the Announcements, Appointments and Users endpoints. When using the library you'll also see an Authentication endpoint, but this is not directly linked to an endpoint over at the Zermelo API.
+This library supports every part of the [documented](http://developers.zermelo.nl) REST API, but also some undocumented endpoints which are used by the [official Zermelo app](https://github.com/zermelo-software/zermelo-app). Documentation of those endpoints is therefore based on educated guesses and might not be completely right. A list of known, but unsupported enpoints can be found in [issue #11](https://github.com/arthurrump/Zermelo.API/issues/11).
