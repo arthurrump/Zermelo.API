@@ -74,18 +74,26 @@ namespace Zermelo.API.Endpoints
         /// When authenticated via an authorization code (which is the only way that's currently supported), you're not allowed
         /// to request the FirstName property, resulting in a HTTP 403 error. By default this property is excluded from the request.
         /// </remarks>
+        /// <param name="includeArchived">
+        /// Include users that are archived (i.e. no longer relevant). Defaults to <c>false</c>.
+        /// </param>
         /// <param name="fields">
         /// The fields (as json keys) to get. Defaults to <c>null</c>, 
         /// which will result in all fields listed in <see cref="User.Fields"/>, except for <c>firstName</c>.
         /// </param>
         /// <returns>A list of all users.</returns>
-        public async Task<IEnumerable<User>> GetAllAsync(IList<string> fields = null)
+        public async Task<IEnumerable<User>> GetAllAsync(bool includeArchived = false, IList<string> fields = null)
         {
             if (fields == null)
             {
                 fields = User.Fields.ToList();
                 fields.Remove("firstName");
             }
+
+            Dictionary<string, string> urlOptions = new Dictionary<string, string>();
+
+            if (!includeArchived)
+                urlOptions.Add("archived", "false");
 
             return await GetByCustomUrlOptionsAsync(null, fields);
         }
