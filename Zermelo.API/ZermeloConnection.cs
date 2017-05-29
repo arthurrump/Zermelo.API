@@ -21,6 +21,7 @@ namespace Zermelo.API
     /// <seealso cref="AnnouncementsEndpoint"/>
     /// <seealso cref="UsersEndpoint"/>
     /// <seealso cref="LocationsEndpoint"/>
+    /// <seealso cref="GroupsEndpoint"/>
     public class ZermeloConnection
     {
         IUrlBuilder _urlBuilder;
@@ -59,6 +60,7 @@ namespace Zermelo.API
             Announcements = new AnnouncementsEndpoint(auth, _urlBuilder, _httpService, _jsonService);
             Users = new UsersEndpoint(auth, _urlBuilder, _httpService, _jsonService);
             Locations = new LocationsEndpoint(auth, _urlBuilder, _httpService, _jsonService);
+            Groups = new GroupsEndpoint(auth, _urlBuilder, _httpService, _jsonService);
         }
 
         /// <summary>
@@ -90,5 +92,11 @@ namespace Zermelo.API
         /// All available methods are listed in <see cref="LocationsEndpoint"/>.
         /// </summary>
         public LocationsEndpoint Locations { get; private set; }
+
+        /// <summary>
+        /// Use this endpoint to get information about groups of students.
+        /// Find all available methods in <see cref="GroupsEndpoint"/>.
+        /// </summary>
+        public GroupsEndpoint Groups { get; private set; }
     }
 }
