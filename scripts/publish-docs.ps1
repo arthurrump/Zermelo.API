@@ -6,7 +6,7 @@ Remove-Item .\* -Recurse -Exclude .git\*, CNAME
 Copy-Item C:\temp\docs\* .\
 
 git add .
-git commit -m ('Docs v' + $Env:APPVEYOR_BUILD_VERSION)
+git commit -m ('Docs v' + $Env:APPVEYOR_BUILD_VERSION) --author="Build Bot <buildbot@schoolrooster.arthurrump.com>"
 git push ('https://' + $Env:GITHUB_TOKEN + '@github.com/arthurrump/Zermelo.API.git') gh-pages
 
 Remove-Item C:\temp\docs -Recurse
