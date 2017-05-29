@@ -22,7 +22,9 @@ namespace Zermelo.API.Models
         /// This is the list that will be passed to the API by default in the related methods, unless stated otherwise.
         /// </summary>
         public static IList<string> Fields => new string[] {
-            "code", "roles", "firstName", "prefix", "lastName"
+            "code", "roles", "isStudent", "isEmployee", "isFamilyMember", "firstName", "prefix", "lastName", "isApplicationManager",
+            "isSchoolScheduler", "isSchoolLeader", "isStudentAdministrator", "isBranchLeader", "isTeamLeader", "isSectionLeader",
+            "isMentor", "isParentTeacherNightScheduler", "isDean", "archived", "hasPassword"
         };
 
         /// <summary>
@@ -36,6 +38,24 @@ namespace Zermelo.API.Models
         /// </summary>
         [JsonProperty("roles")]
         public IEnumerable<string> Roles { get; internal set; }
+
+        /// <summary>
+        /// Indicates if the user is a student. JSON Key: <c>isStudent</c>
+        /// </summary>
+        [JsonProperty("isStudent")]
+        public bool? IsStudent { get; internal set; }
+
+        /// <summary>
+        /// Indicates if the user is a employee. JSON Key: <c>isEmployee</c>
+        /// </summary>
+        [JsonProperty("isEmployee")]
+        public bool? IsEmployee { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>isFamilyMember</c>
+        /// </summary>
+        [JsonProperty("isFamilyMember")]
+        public bool? IsFamilyMember { get; internal set; }
 
         /// <summary>
         /// The first name of a user. JSON Key: <c>firstName</c>
@@ -80,5 +100,77 @@ namespace Zermelo.API.Models
                             return $"{FirstName} {Prefix} {LastName}";
             }
         }
+
+        /// <summary>
+        /// JSON Key: <c>isApplicationManager</c>
+        /// </summary>
+        [JsonProperty("isApplicationManager")]
+        public bool? IsApplicationManager { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>isSchoolScheduler</c>
+        /// </summary>
+        [JsonProperty("isSchoolScheduler")]
+        public bool? IsSchoolScheduler { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>isSchoolLeader</c>
+        /// </summary>
+        [JsonProperty("isSchoolLeader")]
+        public bool? IsSchoolLeader { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>isStudentAdministrator</c>
+        /// </summary>
+        [JsonProperty("isStudentAdministrator")]
+        public bool? IsStudentAdministrator { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>isBranchLeader</c>
+        /// </summary>
+        [JsonProperty("isBranchLeader")]
+        public bool? IsBranchLeader { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>isTeamLeader</c>
+        /// </summary>
+        [JsonProperty("isTeamLeader")]
+        public bool? IsTeamLeader { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>isSectionLeader</c>
+        /// </summary>
+        [JsonProperty("isSectionLeader")]
+        public bool? IsSectionLeader { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>isMentor</c>
+        /// </summary>
+        [JsonProperty("isMentor")]
+        public bool? IsMentor { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>isParentTeacherNightScheduler</c>
+        /// </summary>
+        [JsonProperty("isParentTeacherNightScheduler")]
+        public bool? IsParentTeacherNightScheduler { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>isDean</c>
+        /// </summary>
+        [JsonProperty("isDean")]
+        public bool? IsDean { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>archived</c>
+        /// </summary>
+        [JsonProperty("archived")]
+        public bool? Archived { get; internal set; }
+
+        /// <summary>
+        /// JSON Key: <c>hasPassword</c>
+        /// </summary>
+        [JsonProperty("hasPassword")]
+        public bool? HasPassword { get; internal set; }
     }
 }
