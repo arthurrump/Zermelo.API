@@ -4,12 +4,12 @@
     <TargetFramework>netstandard1.1</TargetFramework>
     <Authors>Arthur Rump</Authors>
     <PackageLicenseUrl>https://github.com/arthurrump/Zermelo.API/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>http://api.zermelo.arthurrump.com</PackageProjectUrl>
+    <PackageProjectUrl>http://zermelo.api.arthurrump.com</PackageProjectUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/arthurrump/Zermelo.API</RepositoryUrl>
     <Description>Connect to Zermelo from your .NET app. This is a third party library, we're not affiliated with Zermelo Software BV.</Description>
     <Company />
-    <Version>3.0.0</Version>
+    <Version>3.1.0</Version>
     <Copyright>Copyright 2017 Arthur Rump</Copyright>
     <RepositoryType>git</RepositoryType>
     <PackageTags>zermelo school schedule</PackageTags>
