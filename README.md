@@ -11,12 +11,12 @@ Zermelo.API is a PCL (Portable Class Library, a Library of Classes that is Porta
 
 ## Links
 - [NuGet](https://www.nuget.org/packages/Zermelo.API)
-- [Documentation](http://api.zermelo.arthurrump.com)
+- [Documentation](http://zermelo.api.arthurrump.com)
 - [Source on GitHub](https://github.com/arthurrump/Zermelo.API)
 - [CI builds on AppVeyor](https://ci.appveyor.com/project/arthurrump/zermelo-api)
 
 ## Projects using this library
-- Schoolrooster voor Zermelo ([GitHub](https://github.com/arthurrump/Zermelo.App.UWP), [Website](http://zermelo.arthurrump.com))
+- Schoolrooster voor Zermelo ([GitHub](https://github.com/arthurrump/Zermelo.App.UWP), [Website](http://schoolrooster.arthurrump.com))
 
 Have you created a very cool project, that should absolutely be listed here? Just add it and create a Pull Request!
 
