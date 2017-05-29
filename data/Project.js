@@ -3,10 +3,10 @@
 var sharpDox = sharpDox || {};
 
 sharpDox.projectData = {
-  name: 'Zermelo.API - Connect to Zermelo from your .NET app',
-       author: 'Arthur Rump',    authorHomepage: 'http://arthurrump.azurewebsites.net',      footerLine: '<p>© 2016 Arthur Rump</p>',   hasLogo: true,
+  name: 'Zermelo.API',
+   homepage: 'http://api.zermelo.arthurrump.com',    version: '3.0.29',    author: 'Arthur Rump',    authorHomepage: 'https://www.arthurrump.com',     showCode: false,
+   footerLine: '<p>Copyright 2017 Arthur Rump</p>',   hasLogo: true,
   targetFxs: [
-			"Portable Class Libraries",
 			"Unknown",
 	  ]
 }
