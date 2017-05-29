@@ -23,37 +23,37 @@ namespace Zermelo.API.Models
         /// The id of a location. JSON Key: <c>id</c>
         /// </summary>
         [JsonProperty("id")]
-        public long? Id { get; set; }
+        public long? Id { get; internal set; }
 
         /// <summary>
         /// The name a location is known by to users. JSON Key: <c>name</c>
         /// </summary>
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name { get; internal set; }
 
         /// <summary>
         /// Capacity for parent-teacher nights. JSON Key: <c>parentteachernightCapacity</c>
         /// </summary>
         [JsonProperty("parentteachernightCapacity")]
-        public long? ParentteachernightCapacity { get; set; }
+        public long? ParentteachernightCapacity { get; internal set; }
 
         /// <summary>
         /// Capacity during a course. JSON Key: <c>courseCapacity</c>
         /// </summary>
         [JsonProperty("courseCapacity")]
-        public long? CourseCapacity { get; set; }
+        public long? CourseCapacity { get; internal set; }
 
         /// <summary>
         /// The id of the main schoolbranch this location belongs to. JSON Key: <c>branchOfSchool</c>
         /// </summary>
         [JsonProperty("branchOfSchool")]
-        public long? BranchId { get; set; }
+        public long? BranchId { get; internal set; }
 
         /// <summary>
         /// The ids of other schoolbranches this location belongs to. JSON Key: <c>secondaryBranches</c>
         /// </summary>
         [JsonProperty("secondaryBranches")]
-        public IList<long> SecondaryBranches { get; set; }
+        public IList<long> SecondaryBranches { get; internal set; }
     }
 
 }
