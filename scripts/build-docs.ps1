@@ -16,6 +16,9 @@ Copy-Item README.md docs\default.sdpd
 
 C:\tools\sharpdox\sharpdox\SharpDox.Console.exe -Config $sdoxPath
 
+New-Item ($fullOutputPath + '\Html\default\logo\') -Force -ItemType Directory
+Copy-Item .\logo\logo.png ($fullOutputPath + '\Html\default\logo\logo.png')
+
 Compress-Archive .\docs\build\Html\default\* .\docs\build\docs.zip -Force
 
 Remove-Item docs\build\Html\default\start.exe
