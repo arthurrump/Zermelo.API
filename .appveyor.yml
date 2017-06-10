@@ -10,9 +10,8 @@ install:
 - ps: .\scripts\install-sharpdox.ps1
 cache: C:\tools\
 build_script:
-- ps: .\scripts\patch-version.ps1
 - ps: dotnet restore
-- ps: dotnet build -c Release
+- ps: dotnet build -c Release /p:Version=$Env:APPVEYOR_BUILD_VERSION
 - ps: .\scripts\build-docs.ps1
 test_script:
 - ps: dotnet test .\Zermelo.API.Tests\Zermelo.API.Tests.csproj --no-build -c Release
